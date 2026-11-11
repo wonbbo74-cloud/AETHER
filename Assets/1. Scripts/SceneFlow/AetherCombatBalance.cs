@@ -40,20 +40,21 @@ public static class AetherCombatBalance
     /// <summary>
     /// 플레이어가 적에게서 받는 피해 전체에 한 번 더 곱하는 배율(총알·드론 자폭).
     ///
-    /// 적의 공격이 너무 셌다. 적마다 다른 경로(총알·자폭·근접)로
-    /// 들어오는 피해를 한곳(PlayerStatus)에서 함께 줄인다. 독가스·화염 같은 지형 피해는 그대로.
+    /// 적마다 다른 경로(총알·자폭·근접)로 들어오는 피해를 한곳(PlayerStatus)에서 함께 조절한다.
+    /// 독가스·화염 같은 지형 피해는 그대로.
+    ///
+    /// 조정 기록: 처음엔 적의 공격이 너무 세서 0.6 으로 낮췄다. 그 뒤 체력 200·자연 회복과 겹쳐
+    /// HP 가 거의 닳지 않아 긴장감이 사라졌고, 1.0 → 1.3 → 2.6 → 5.2 로 단계적으로 올렸다.
     /// </summary>
-    /// 그 뒤 HP 가 너무 안 닳아 0.6 에서 1.0 으로(체감 약 1.7배), 다시 1.3배 → 1.3.
-    public const float IncomingEnemyDamageScale = 5.2f;   // 10/12: 1.3 의 2배(2.6), 10/13: 또 2배
+    public const float IncomingEnemyDamageScale = 5.2f;
 
     public static float ScaleIncomingEnemyDamage(float damage) => damage * IncomingEnemyDamageScale * AetherLevel.IncomingDamageScale * AetherEncounterDirector.DamageScale;
 
     /// <summary>
     /// 터렛이 플레이어를 노리기 시작하는 거리(m).
     ///
-    /// 씬에 34m 로 저장되어 있어서, 잔해에 묻혀 보이지도 않는 터렛이 총알만 보내 왔다.
-    /// 쏘는 쪽이 눈에 보이는 거리까지 당긴다.
-    /// 22m → 40m(더 멀리 있는 플레이어도 쏜다). 가려진 터렛은 HasClearShot 이 막는다.
+    /// 씬에는 34m 로 저장되어 있었다. 잔해에 묻혀 보이지 않는 터렛이 총알만 보내 와서 22m 로 줄였다가,
+    /// 더 멀리 있는 플레이어도 쏘도록 40m 로 늘렸다. 대신 가려진 터렛은 HasClearShot 이 사격을 막는다.
     /// 씬 저장값(34m)보다 커야 하므로 EnemyTurretController 는 이 값을 그대로 쓴다.
     /// </summary>
     public const float TurretDetectionRange = 40f;
