@@ -4,6 +4,7 @@
 !/.gitignore
 !/.gitattributes
 !/README.md
+!/docs/
 !/Assets/
 !/Packages/
 !/ProjectSettings/
