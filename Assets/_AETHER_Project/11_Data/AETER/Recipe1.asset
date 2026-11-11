@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebd3e00db2689034d83b7b804751eaa2, type: 3}
+  m_Name: Recipe1
+  m_EditorClassIdentifier: Assembly-CSharp::CraftRecipeSO
+  requiredItems:
+  - {fileID: 11400000, guid: 14d671e382d3efd49a4d875f41952740, type: 2}
+  - {fileID: 11400000, guid: ef373cb8e810c6d4c80955cbf088e117, type: 2}
+  - {fileID: 11400000, guid: 9fce9a62e864777408c32f5bc78b7416, type: 2}
+  - {fileID: 11400000, guid: 44b48d0dc92fed841b7cb917af9d3a05, type: 2}
+  - {fileID: 11400000, guid: 42355bda6820f654eb58af574e504a3a, type: 2}
+  resultItem: {fileID: 11400000, guid: b98dcdb922f29c74eb47d1647e7c83f9, type: 2}

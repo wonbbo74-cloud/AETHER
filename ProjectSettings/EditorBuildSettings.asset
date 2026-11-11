@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: "Assets/0. Scenes/01.\uC2A4\uD0C0\uD2B8\uC52C.unity"
+    guid: 0644db28601c4e949933b560319063b0
+  - enabled: 1
+    path: "Assets/0. Scenes/02.\uD50C\uB808\uC774\uC5B4\uC120\uD0DD.unity"
+    guid: c4b065e3345ade74d9c222475a5e5957
+  - enabled: 1
+    path: Assets/0. Scenes/03.LoadingScene.unity
+    guid: 5867c1bd256e70e4ca960c47e2c14d09
+  - enabled: 0
+    path: Assets/0. Scenes/Loading.unity
+    guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/0. Scenes/04.Tutorial1.unity
+    guid: b21ace170778a78409406489a80227c1
+  - enabled: 0
+    path: Assets/0. Scenes/MainMenu.unity
+    guid: 0ffd0e6e175be3b4f802db15b9614f7e
+  - enabled: 0
+    path: Assets/0. Scenes/Tutorial0.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: "Assets/0. Scenes/05.\uD3D0\uD5C8\uB41C \uB3C4\uC2DC.unity"
+    guid: 1bec4a3704996f745b3c6f4a85520010
+  - enabled: 1
+    path: Assets/0. Scenes/Puzzle2.unity
+    guid: b56fdf5d74714904284d6dd0cf4ae42c
+  - enabled: 1
+    path: Assets/0. Scenes/Puzzle3.unity
+    guid: 59c3deae59c18d040aeb8b6eb6528fd5
+  - enabled: 1
+    path: "Assets/0. Scenes/06.\uC5F0\uAD6C\uC18C \uBA54\uC778 \uC7A5\uC18C.unity"
+    guid: 3695dfa29624f624fab36780384e3387
+  - enabled: 1
+    path: "Assets/0. Scenes/07.\uD30C\uCE20 \uC81C\uC791\uC2E4.unity"
+    guid: d8be3c13c81116b45956a64664e2e7bd
+  - enabled: 0
+    path: "Assets/0. Scenes/08.1\uAD6C\uC5ED.unity"
+    guid: 246461ea805f3c14cb620102040f1e34
+  - enabled: 0
+    path: "Assets/0. Scenes/08.1\uAD6C\uC5ED_2.unity"
+    guid: ba8551bd3ee9ea94eb85d34de9957154
+  - enabled: 0
+    path: "Assets/0. Scenes/09.2\uAD6C\uC5ED_2.unity"
+    guid: f1a88df84d9cc16479a4fe1ca7da64b1
+  - enabled: 0
+    path: "Assets/0. Scenes/11.3\uAD6C\uC5ED_\uCC10.unity"
+    guid: 8f1a01e4b1a374aa6bfe472517a8a56e
+  - enabled: 1
+    path: Assets/0. Scenes/Multiplayer/LobbyScene.unity
+    guid: 0fb6d36c0eb6c0e49aa80a6a086aa068
+  - enabled: 0
+    path: Assets/0. Scenes/Multiplayer/GameScene.unity
+    guid: 329c9e4faaed1ee4eb8287c46345f27d
+  - enabled: 1
+    path: "Assets/0. Scenes/Cinematic/Cine_01_\uBC99\uCEE4\uB300\uD654.unity"
+    guid: 091bcfdf89aac4ac3b0cafe2dbca7e86
+  - enabled: 1
+    path: "Assets/0. Scenes/Cinematic/Cine_02_\uB85C\uBD07\uC55E.unity"
+    guid: 0b34abdec4b84cbda8032705b919297e
+  - enabled: 1
+    path: "Assets/0. Scenes/Cinematic/Cine_03_\uC5F0\uAD6C\uC18C\uC55E.unity"
+    guid: ecab8aace9b994c73bcafef4d24f33e7
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: d21025f76addc43409f58d57d88ab619, type: 2}
+    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  m_UseUCBPForAssetBundles: 0

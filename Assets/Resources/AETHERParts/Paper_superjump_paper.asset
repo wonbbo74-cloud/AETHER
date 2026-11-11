@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52abfcb376ce9c34ba285c02e4808476, type: 3}
+  m_Name: Paper_superjump_paper
+  m_EditorClassIdentifier: Assembly-CSharp::PaperData
+  paperId: superjump_paper
+  title: Super Jump Blueprint
+  bodyText: Blueprint for a leg module that stores jump energy and releases it as
+    vertical thrust.
+  hintText: 'Place Battery at row 1 column 1, Cable at row 2 column 2, Crank
+    at row 2 column 4, Small Key at row 1 column 5, and Recipe at row 3 column
+    3.'
+  relatedRecipe: {fileID: 11400000, guid: 015f00ac5631a4d4aa2b38d58dbdb30a, type: 2}
+  requiredModuleIds:
+  - BatteryAA_module
+  - Cable_Black_module
+  - Crank_module
+  - SmallKey_module
+  - BookPageWriting4_paper
+  resultPart: {fileID: 11400000, guid: 7c5a0f202460e4a44bc7c944743aa5bf, type: 2}

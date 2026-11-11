@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: ba8551bd3ee9ea94eb85d34de9957154
+timeCreated: 1505755279
+licenseType: Store
+DefaultImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 105051
+  packageName: Apocalyptic Wasteland
+  packageVersion: 1.1
+  assetPath: Assets/ApocalypticWasteland/Scenes/Wasteland.unity
+  uploadId: 317902

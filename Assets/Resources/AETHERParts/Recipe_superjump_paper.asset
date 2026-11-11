@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e69d03586aa4554b889749cd3ae4633, type: 3}
+  m_Name: Recipe_superjump_paper
+  m_EditorClassIdentifier: Assembly-CSharp::CraftingRecipeData
+  recipeId: superjump_paper
+  resultPart: {fileID: 11400000, guid: 7c5a0f202460e4a44bc7c944743aa5bf, type: 2}
+  requiredModuleIds:
+  - BatteryAA_module
+  - Cable_Black_module
+  - Crank_module
+  - SmallKey_module
+  - BookPageWriting4_paper
+  gridSize: {x: 5, y: 5}
+  expectedPositions:
+  - itemId: BatteryAA_module
+    position: {x: 0, y: 0}
+  - itemId: Cable_Black_module
+    position: {x: 1, y: 1}
+  - itemId: Crank_module
+    position: {x: 3, y: 1}
+  - itemId: SmallKey_module
+    position: {x: 4, y: 0}
+  - itemId: BookPageWriting4_paper
+    position: {x: 2, y: 2}
+  recipeHintText: "1\uD589 1\uC5F4 \uBC30\uD130\uB9AC, 2\uD589 2\uC5F4 \uCF00\uC774\uBE14,
+    2\uD589 4\uC5F4 \uD06C\uB7AD\uD06C, 1\uD589 5\uC5F4 \uC791\uC740 \uC5F4\uC1E0,
+    3\uD589 3\uC5F4 \uC124\uACC4\uC11C."

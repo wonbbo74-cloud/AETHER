@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 5ea53b07f2344e28a1c6234e847d69bb
+timeCreated: 1473691201
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 73777
+  packageName: Legacy Particle Pack
+  packageVersion: 4.0
+  assetPath: Assets/UnityTechnologies/EffectExamples/WeaponEffects/Prefabs/BulletImpactMetalEffect.prefab
+  uploadId: 684565

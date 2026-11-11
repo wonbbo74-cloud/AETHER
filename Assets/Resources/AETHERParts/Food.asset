@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cea3d9039aeb22a4c88d7d61fabf6541, type: 3}
+  m_Name: Food
+  m_EditorClassIdentifier: Assembly-CSharp::ItemData
+  id: Food
+  displayName: "\uC2DD\uB7C9"
+  itemSprite: {fileID: -99755020, guid: 2b35a099b4489ec4b93748ed9e6de42b, type: 3}
+  description: "\uB9DB\uC788\uB294 \uC2DD\uB7C9"
+  effects:
+  - type: 2
+    value: 0
+    customText: "\uC2DD\uB7C9"
+    icon: {fileID: 1445372084, guid: fd4f150b201612e40b81f30ac1a3e07b, type: 3}
+  - type: 0
+    value: 30
+    customText: "\uCCB4\uB825 + 30"
+    icon: {fileID: 21300000, guid: e391fbcb6c33c384ab4cdac4fd480cec, type: 3}
+  - type: 1
+    value: -10
+    customText: "\uC218\uBD84 - 10"
+    icon: {fileID: 21300000, guid: 5171b84dda0626840a896f5861274678, type: 3}

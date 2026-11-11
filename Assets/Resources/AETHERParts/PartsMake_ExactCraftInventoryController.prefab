@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6290694247662350391
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2113904333084369180}
+  - component: {fileID: 4728096159051338283}
+  m_Layer: 0
+  m_Name: PartsMake_ExactCraftInventoryController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2113904333084369180
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6290694247662350391}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 891.44867, y: 568.62335, z: -550.50854}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4728096159051338283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6290694247662350391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc1677240b672eb408db7211e912df76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CraftInventoryController
+  allItemSlots:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  allItems:
+  - {fileID: 11400000, guid: ef373cb8e810c6d4c80955cbf088e117, type: 2}
+  - {fileID: 11400000, guid: 9fce9a62e864777408c32f5bc78b7416, type: 2}
+  - {fileID: 11400000, guid: 44b48d0dc92fed841b7cb917af9d3a05, type: 2}
+  - {fileID: 11400000, guid: 42355bda6820f654eb58af574e504a3a, type: 2}
+  - {fileID: 11400000, guid: 14d671e382d3efd49a4d875f41952740, type: 2}

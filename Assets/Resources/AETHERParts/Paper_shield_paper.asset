@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52abfcb376ce9c34ba285c02e4808476, type: 3}
+  m_Name: Paper_shield_paper
+  m_EditorClassIdentifier: Assembly-CSharp::PaperData
+  paperId: shield_paper
+  title: Shield Blueprint
+  bodyText: Blueprint for an arm shield that blocks incoming projectiles while powered.
+  hintText: 'Grid hint: shield core above power cell, stabilizer and frame on the
+    sides.'
+  relatedRecipe: {fileID: 11400000, guid: d84c76165a1f36c42b52efa39514c184, type: 2}
+  requiredModuleIds:
+  - shield_core_module
+  - power_cell_module
+  - stabilizer_module
+  - frame_core_module

@@ -1,0 +1,703 @@
+{
+    "metadata": {
+        "screenWidth": 1920,
+        "screenHeight": 1080,
+        "exportDate": "2025-12-27T13:19:26.253Z",
+        "version": "1.0"
+    },
+    "gameplay": {
+        "totalGates": 12,
+        "totalConnections": 20,
+        "difficulty": "hard"
+    },
+    "gates": [
+        {
+            "id": "startGate",
+            "gateType": "transmitter",
+            "logic": "pass",
+            "requiredSignalType": 0,
+            "index": -1,
+            "name": "START",
+            "position": {
+                "x": 40,
+                "y": 480
+            },
+            "size": {
+                "width": 200,
+                "height": 140
+            },
+            "ports": [
+                {
+                    "id": "start",
+                    "localPosition": {
+                        "x": 200,
+                        "y": 70
+                    },
+                    "type": "output"
+                }
+            ]
+        },
+
+        {
+            "id": "box1",
+            "gateType": "normal",
+            "logic": "pass",
+            "requiredSignalType": 0,
+            "index": 0,
+            "name": "게이트 A",
+            "position": {
+                "x": 400,
+                "y": 120
+            },
+            "size": {
+                "width": 200,
+                "height": 140
+            },
+            "ports": [
+                {
+                    "id": "box1-in",
+                    "localPosition": {
+                        "x": 0,
+                        "y": 70
+                    },
+                    "type": "input"
+                },
+                {
+                    "id": "box1-out",
+                    "localPosition": {
+                        "x": 200,
+                        "y": 70
+                    },
+                    "type": "output"
+                }
+            ]
+        },
+
+        {
+            "id": "box2",
+            "gateType": "normal",
+            "logic": "switch",
+            "requiredSignalType": 0,
+            "index": 1,
+            "name": "게이트 B (SWITCH)",
+            "position": {
+                "x": 400,
+                "y": 300
+            },
+            "size": {
+                "width": 200,
+                "height": 140
+            },
+            "ports": [
+                {
+                    "id": "box2-in",
+                    "localPosition": {
+                        "x": 0,
+                        "y": 70
+                    },
+                    "type": "input"
+                },
+                {
+                    "id": "box2-out1",
+                    "localPosition": {
+                        "x": 200,
+                        "y": 50
+                    },
+                    "type": "output"
+                },
+                {
+                    "id": "box2-out2",
+                    "localPosition": {
+                        "x": 200,
+                        "y": 90
+                    },
+                    "type": "output"
+                }
+            ]
+        },
+
+        {
+            "id": "box3",
+            "gateType": "normal",
+            "logic": "switch",
+            "requiredSignalType": 0,
+            "index": 2,
+            "name": "게이트 C (SWITCH)",
+            "position": {
+                "x": 400,
+                "y": 480
+            },
+            "size": {
+                "width": 200,
+                "height": 140
+            },
+            "ports": [
+                {
+                    "id": "box3-in",
+                    "localPosition": {
+                        "x": 0,
+                        "y": 70
+                    },
+                    "type": "input"
+                },
+                {
+                    "id": "box3-out1",
+                    "localPosition": {
+                        "x": 200,
+                        "y": 50
+                    },
+                    "type": "output"
+                },
+                {
+                    "id": "box3-out2",
+                    "localPosition": {
+                        "x": 200,
+                        "y": 90
+                    },
+                    "type": "output"
+                }
+            ]
+        },
+
+        {
+            "id": "box4",
+            "gateType": "normal",
+            "logic": "switch",
+            "requiredSignalType": 0,
+            "index": 3,
+            "name": "게이트 D (SWITCH)",
+            "position": {
+                "x": 400,
+                "y": 660
+            },
+            "size": {
+                "width": 200,
+                "height": 140
+            },
+            "ports": [
+                {
+                    "id": "box4-in",
+                    "localPosition": {
+                        "x": 0,
+                        "y": 70
+                    },
+                    "type": "input"
+                },
+                {
+                    "id": "box4-out1",
+                    "localPosition": {
+                        "x": 200,
+                        "y": 50
+                    },
+                    "type": "output"
+                },
+                {
+                    "id": "box4-out2",
+                    "localPosition": {
+                        "x": 200,
+                        "y": 90
+                    },
+                    "type": "output"
+                }
+            ]
+        },
+
+        {
+            "id": "box5",
+            "gateType": "normal",
+            "logic": "pass",
+            "requiredSignalType": 0,
+            "index": 4,
+            "name": "게이트 E",
+            "position": {
+                "x": 400,
+                "y": 840
+            },
+            "size": {
+                "width": 200,
+                "height": 140
+            },
+            "ports": [
+                {
+                    "id": "box5-in",
+                    "localPosition": {
+                        "x": 0,
+                        "y": 70
+                    },
+                    "type": "input"
+                },
+                {
+                    "id": "box5-out",
+                    "localPosition": {
+                        "x": 200,
+                        "y": 70
+                    },
+                    "type": "output"
+                }
+            ]
+        },
+
+        {
+            "id": "box6",
+            "gateType": "normal",
+            "logic": "and",
+            "requiredSignalType": 0,
+            "index": 5,
+            "name": "게이트 F (AND)",
+            "position": {
+                "x": 800,
+                "y": 180
+            },
+            "size": {
+                "width": 200,
+                "height": 140
+            },
+            "ports": [
+                {
+                    "id": "box6-in1",
+                    "localPosition": {
+                        "x": 0,
+                        "y": 40
+                    },
+                    "type": "input"
+                },
+                {
+                    "id": "box6-in2",
+                    "localPosition": {
+                        "x": 0,
+                        "y": 90
+                    },
+                    "type": "input"
+                },
+                {
+                    "id": "box6-out",
+                    "localPosition": {
+                        "x": 200,
+                        "y": 65
+                    },
+                    "type": "output"
+                }
+            ]
+        },
+
+        {
+            "id": "box7",
+            "gateType": "normal",
+            "logic": "and",
+            "requiredSignalType": 0,
+            "index": 6,
+            "name": "게이트 G (AND)",
+            "position": {
+                "x": 800,
+                "y": 380
+            },
+            "size": {
+                "width": 200,
+                "height": 140
+            },
+            "ports": [
+                {
+                    "id": "box7-in1",
+                    "localPosition": {
+                        "x": 0,
+                        "y": 40
+                    },
+                    "type": "input"
+                },
+                {
+                    "id": "box7-in2",
+                    "localPosition": {
+                        "x": 0,
+                        "y": 90
+                    },
+                    "type": "input"
+                },
+                {
+                    "id": "box7-out",
+                    "localPosition": {
+                        "x": 200,
+                        "y": 65
+                    },
+                    "type": "output"
+                }
+            ]
+        },
+
+        {
+            "id": "box8",
+            "gateType": "normal",
+            "logic": "and",
+            "requiredSignalType": 0,
+            "index": 7,
+            "name": "게이트 H (AND)",
+            "position": {
+                "x": 800,
+                "y": 580
+            },
+            "size": {
+                "width": 200,
+                "height": 140
+            },
+            "ports": [
+                {
+                    "id": "box8-in1",
+                    "localPosition": {
+                        "x": 0,
+                        "y": 40
+                    },
+                    "type": "input"
+                },
+                {
+                    "id": "box8-in2",
+                    "localPosition": {
+                        "x": 0,
+                        "y": 90
+                    },
+                    "type": "input"
+                },
+                {
+                    "id": "box8-out",
+                    "localPosition": {
+                        "x": 200,
+                        "y": 65
+                    },
+                    "type": "output"
+                }
+            ]
+        },
+
+        {
+            "id": "box9",
+            "gateType": "normal",
+            "logic": "and",
+            "requiredSignalType": 0,
+            "index": 8,
+            "name": "게이트 I (AND)",
+            "position": {
+                "x": 800,
+                "y": 780
+            },
+            "size": {
+                "width": 200,
+                "height": 140
+            },
+            "ports": [
+                {
+                    "id": "box9-in1",
+                    "localPosition": {
+                        "x": 0,
+                        "y": 40
+                    },
+                    "type": "input"
+                },
+                {
+                    "id": "box9-in2",
+                    "localPosition": {
+                        "x": 0,
+                        "y": 90
+                    },
+                    "type": "input"
+                },
+                {
+                    "id": "box9-out",
+                    "localPosition": {
+                        "x": 200,
+                        "y": 65
+                    },
+                    "type": "output"
+                }
+            ]
+        },
+
+        {
+            "id": "box10",
+            "gateType": "normal",
+            "logic": "and",
+            "requiredSignalType": 0,
+            "index": 9,
+            "name": "게이트 J (AND)",
+            "position": {
+                "x": 1200,
+                "y": 280
+            },
+            "size": {
+                "width": 200,
+                "height": 140
+            },
+            "ports": [
+                {
+                    "id": "box10-in1",
+                    "localPosition": {
+                        "x": 0,
+                        "y": 40
+                    },
+                    "type": "input"
+                },
+                {
+                    "id": "box10-in2",
+                    "localPosition": {
+                        "x": 0,
+                        "y": 90
+                    },
+                    "type": "input"
+                },
+                {
+                    "id": "box10-out",
+                    "localPosition": {
+                        "x": 200,
+                        "y": 65
+                    },
+                    "type": "output"
+                }
+            ]
+        },
+
+        {
+            "id": "box11",
+            "gateType": "normal",
+            "logic": "and",
+            "requiredSignalType": 0,
+            "index": 10,
+            "name": "게이트 K (AND)",
+            "position": {
+                "x": 1200,
+                "y": 480
+            },
+            "size": {
+                "width": 200,
+                "height": 140
+            },
+            "ports": [
+                {
+                    "id": "box11-in1",
+                    "localPosition": {
+                        "x": 0,
+                        "y": 40
+                    },
+                    "type": "input"
+                },
+                {
+                    "id": "box11-in2",
+                    "localPosition": {
+                        "x": 0,
+                        "y": 90
+                    },
+                    "type": "input"
+                },
+                {
+                    "id": "box11-out",
+                    "localPosition": {
+                        "x": 200,
+                        "y": 65
+                    },
+                    "type": "output"
+                }
+            ]
+        },
+
+        {
+            "id": "box12",
+            "gateType": "normal",
+            "logic": "and",
+            "requiredSignalType": 0,
+            "index": 11,
+            "name": "게이트 L (AND)",
+            "position": {
+                "x": 1200,
+                "y": 680
+            },
+            "size": {
+                "width": 200,
+                "height": 140
+            },
+            "ports": [
+                {
+                    "id": "box12-in1",
+                    "localPosition": {
+                        "x": 0,
+                        "y": 40
+                    },
+                    "type": "input"
+                },
+                {
+                    "id": "box12-in2",
+                    "localPosition": {
+                        "x": 0,
+                        "y": 90
+                    },
+                    "type": "input"
+                },
+                {
+                    "id": "box12-out",
+                    "localPosition": {
+                        "x": 200,
+                        "y": 65
+                    },
+                    "type": "output"
+                }
+            ]
+        },
+
+        {
+            "id": "endGate",
+            "gateType": "end",
+            "logic": "pass",
+            "requiredSignalType": 0,
+            "index": 999,
+            "name": "END",
+            "position": {
+                "x": 1680,
+                "y": 480
+            },
+            "size": {
+                "width": 200,
+                "height": 140
+            },
+            "ports": [
+                {
+                    "id": "end",
+                    "localPosition": {
+                        "x": 0,
+                        "y": 70
+                    },
+                    "type": "input"
+                }
+            ]
+        }
+    ],
+
+    "startButton": {
+        "position": {
+            "x": 40,
+            "y": 480
+        },
+        "size": {
+            "width": 200,
+            "height": 140
+        },
+        "portId": "start"
+    },
+    "endButton": {
+        "position": {
+            "x": 1680,
+            "y": 480
+        },
+        "size": {
+            "width": 200,
+            "height": 140
+        },
+        "portId": "end"
+    },
+
+    "correctSolution": [
+        {
+            "index": 0,
+            "fromPortId": "start",
+            "toPortId": "box1-in"
+        },
+        {
+            "index": 1,
+            "fromPortId": "start",
+            "toPortId": "box2-in"
+        },
+        {
+            "index": 2,
+            "fromPortId": "start",
+            "toPortId": "box3-in"
+        },
+        {
+            "index": 3,
+            "fromPortId": "start",
+            "toPortId": "box4-in"
+        },
+        {
+            "index": 4,
+            "fromPortId": "start",
+            "toPortId": "box5-in"
+        },
+
+        {
+            "index": 5,
+            "fromPortId": "box1-out",
+            "toPortId": "box6-in1"
+        },
+
+        {
+            "index": 6,
+            "fromPortId": "box2-out1",
+            "toPortId": "box6-in2"
+        },
+        {
+            "index": 7,
+            "fromPortId": "box2-out2",
+            "toPortId": "box7-in1"
+        },
+
+        {
+            "index": 8,
+            "fromPortId": "box3-out1",
+            "toPortId": "box7-in2"
+        },
+        {
+            "index": 9,
+            "fromPortId": "box3-out2",
+            "toPortId": "box8-in1"
+        },
+
+        {
+            "index": 10,
+            "fromPortId": "box4-out1",
+            "toPortId": "box8-in2"
+        },
+        {
+            "index": 11,
+            "fromPortId": "box4-out2",
+            "toPortId": "box9-in1"
+        },
+
+        {
+            "index": 12,
+            "fromPortId": "box5-out",
+            "toPortId": "box9-in2"
+        },
+
+        {
+            "index": 13,
+            "fromPortId": "box6-out",
+            "toPortId": "box10-in1"
+        },
+        {
+            "index": 14,
+            "fromPortId": "box7-out",
+            "toPortId": "box10-in2"
+        },
+
+        {
+            "index": 15,
+            "fromPortId": "box8-out",
+            "toPortId": "box11-in1"
+        },
+        {
+            "index": 16,
+            "fromPortId": "box9-out",
+            "toPortId": "box11-in2"
+        },
+
+        {
+            "index": 17,
+            "fromPortId": "box10-out",
+            "toPortId": "box12-in1"
+        },
+        {
+            "index": 18,
+            "fromPortId": "box11-out",
+            "toPortId": "box12-in2"
+        },
+
+        {
+            "index": 19,
+            "fromPortId": "box12-out",
+            "toPortId": "end"
+        }
+    ]
+}

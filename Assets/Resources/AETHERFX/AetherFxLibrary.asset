@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a60a7ba53ca492240b204b91a5770e99, type: 3}
+  m_Name: AetherFxLibrary
+  m_EditorClassIdentifier: Assembly-CSharp::AetherFxLibrary
+  bigExplosion: {fileID: 1121192042590650, guid: e1b08032bec16ba4eb1ae23cbd572664, type: 3}
+  dustExplosion: {fileID: 1025285306637258, guid: d8f0099df63275647a8bcf646df1ca00, type: 3}
+  smokeColumn: {fileID: 1273915125232972, guid: 73767e07adddc394d82b994801f89bbb, type: 3}
+  burningWreck: {fileID: 8829451551789304542, guid: 8206b722d11501a449d6a278cca2adfa, type: 3}
+  smokeTexture: {fileID: 2800000, guid: 90dbf173ff255434d8191e5cbbe24576, type: 3}

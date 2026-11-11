@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 049940aa86c19f44cbe0d0b20374a231, type: 3}
+  m_Name: Part_breaker_part
+  m_EditorClassIdentifier: Assembly-CSharp::PartData
+  id: breaker_part
+  displayName: "\uBE0C\uB808\uC774\uCEE4 \uD30C\uCE20"
+  itemSprite: {fileID: 21300000, guid: e54940b21caf6774ab408f73641fa81c, type: 3}
+  description: "Q \uD0A4\uB85C \uC57D\uD55C \uBCBD\uACFC \uBD80\uC11C\uC9C4 \uBB38\uC744
+    \uBD80\uC21C\uB2E4."
+  effects: []
+  partId: breaker_part
+  icon: {fileID: 21300000, guid: e54940b21caf6774ab408f73641fa81c, type: 3}
+  partType: 3
+  slotType: 3
+  powerCost: 15
+  cooldown: 0.7
+  abilityValue: 1
+  attackBonus: 0
+  defenseBonus: 0
+  speedBonus: 0

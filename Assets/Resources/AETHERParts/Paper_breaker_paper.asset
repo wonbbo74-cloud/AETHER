@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52abfcb376ce9c34ba285c02e4808476, type: 3}
+  m_Name: Paper_breaker_paper
+  m_EditorClassIdentifier: Assembly-CSharp::PaperData
+  paperId: breaker_paper
+  title: Breaker Blueprint
+  bodyText: Blueprint for a utility breaker that damages weak barriers in front of
+    Yunseo.
+  hintText: 'Grid hint: align breaker core, power cell, stabilizer, and frame vertically.'
+  relatedRecipe: {fileID: 11400000, guid: 44b68b8b85a247244a3dbdc10a2d62da, type: 2}
+  requiredModuleIds:
+  - breaker_core_module
+  - power_cell_module
+  - stabilizer_module
+  - frame_core_module

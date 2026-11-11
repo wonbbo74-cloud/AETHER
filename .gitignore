@@ -1,0 +1,82 @@
+# ── 저장소에는 Unity 프로젝트 본체만 올린다 ──
+# 루트는 기본 제외, 필요한 것만 다시 포함
+/*
+!/.gitignore
+!/.gitattributes
+!/README.md
+!/Assets/
+!/Packages/
+!/ProjectSettings/
+
+# ── 외부(구매·다운로드) 에셋 팩: 라이선스·용량 때문에 제외 ──
+/Assets/10. DownloadAssets/
+/Assets/10. DownloadAssets.meta
+/Assets/11.another aseets/
+/Assets/11.another aseets.meta
+/Assets/Polygonautic/
+/Assets/Polygonautic.meta
+/Assets/_Creepy_Cat/
+/Assets/_Creepy_Cat.meta
+/Assets/Construction_Package/
+/Assets/Construction_Package.meta
+/Assets/Industrial_Zone_Modular_Pack/
+/Assets/Industrial_Zone_Modular_Pack.meta
+/Assets/UnityTechnologies/
+/Assets/UnityTechnologies.meta
+/Assets/Robot_Soldier/
+/Assets/Robot_Soldier.meta
+/Assets/old building1/
+/Assets/old building1.meta
+/Assets/HorrorPuzzleItems/
+/Assets/HorrorPuzzleItems.meta
+/Assets/TD_Sci-Fi_Turret1_Example/
+/Assets/TD_Sci-Fi_Turret1_Example.meta
+/Assets/Underwater-Effect/
+/Assets/Underwater-Effect.meta
+/Assets/PurePoly/
+/Assets/PurePoly.meta
+/Assets/Cosmic_Retro_Grenades_Pack_1_Demo/
+/Assets/Cosmic_Retro_Grenades_Pack_1_Demo.meta
+/Assets/DanielRiches/
+/Assets/DanielRiches.meta
+/Assets/Grimoire/
+/Assets/Grimoire.meta
+/Assets/animator_/
+/Assets/animator_.meta
+/Assets/Assets/ALP_Assets/
+/Assets/Assets/ALP_Assets.meta
+/Assets/4. Animations/Animation Library[[]Pro]/
+/Assets/4. Animations/Animation Library[[]Pro].meta
+/Assets/_AETHER_Project/07_Prefabs/ApocalypticWasteland/
+/Assets/_AETHER_Project/07_Prefabs/ApocalypticWasteland.meta
+/Assets/_AETHER_Project/07_Prefabs/SciFi Warehouse Kit/
+/Assets/_AETHER_Project/07_Prefabs/SciFi Warehouse Kit.meta
+
+# ── 작업 찌꺼기·백업·스크린샷 ──
+/Assets/_Recovery/
+/Assets/_Recovery.meta
+/Assets/_TerrainAutoUpgrade/
+/Assets/_TerrainAutoUpgrade.meta
+/Assets/AetherBackup/
+/Assets/AetherBackup.meta
+/Assets/Screenshots/
+/Assets/Screenshots.meta
+/Assets/_AETHER_Project/00_ReadMe/Screenshots/
+/Assets/_AETHER_Project/00_ReadMe/Screenshots.meta
+# Unity가 무시하는 ~ 폴더(업로드용 사본)
+/Assets/*~/
+
+# ── Unity 일반 ──
+*.pidb.meta
+*.pdb.meta
+*.mdb.meta
+sysinfo.txt
+crashlytics-build.properties
+*.apk
+*.aab
+*.unitypackage
+*.unitypackage.meta
+
+# Unity 개인 설정 사본
+*.private
+*.private.[0-9]*

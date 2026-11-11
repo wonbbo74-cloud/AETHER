@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a4f6473f6a064f4d9834886cfe1e90d, type: 3}
+  m_Name: M4
+  m_EditorClassIdentifier: Assembly-CSharp::CraftItemDataSO
+  itemId: M4
+  itemName: Control Core
+  description: A central control unit that regulates energy flow and module behavior.
+  itemType: 0
+  iconTexture: {fileID: 2800000, guid: cc43888360c7d974283ed06f7e6767c4, type: 3}
+  previewTexture: {fileID: 2800000, guid: cc43888360c7d974283ed06f7e6767c4, type: 3}
+  attack: 0
+  defense: 0
+  speed: 0
