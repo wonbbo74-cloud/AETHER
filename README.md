@@ -39,6 +39,8 @@
 | **구역 진행** | 엘리베이터와 구역 클리어 기록으로 진행을 관리합니다. |
 | **연출·UI** | 미니맵, 나침반, 경계 단계 표시, 화면 흔들림, 장면 전환 페이드, Cinemachine·Timeline 시네마틱 |
 
+> 📄 각 시스템의 설계 의도와 플레이테스트 후 수치를 어떻게 조정했는지는 [기획 설계와 밸런스 조정 기록](docs/DESIGN.md)에 정리했습니다.
+
 ## 📁 폴더 구조
 
 ```text
@@ -48,12 +50,15 @@ Assets/
 │   ├── Player/         #   캐릭터별 이동·전투 (Hankyul = 한결, Yunseo = 윤서)
 │   ├── PartsSystem/    #   파츠 장착·능력
 │   ├── Puzzle/         #   회로·코드 해독 퍼즐, 난이도 조절
+│   ├── Crafting/       #   파츠 제작 화면(재료 슬롯·드래그)
 │   ├── Drones/ Robots/ Turrets/   # 적
 │   ├── SceneFlow/      #   구역 진행, 전투 배치
 │   └── Cinematic/ UI/ Elevator/ Interaction/ ...
 ├── _AETHER_Project/    # 프리팹·UI·오디오·데이터 정리 폴더
 ├── 6. Prefabs/  7. UI/  5. Sound/
 └── Resources/          # 실행 중 불러오는 오디오·FX·HUD·퍼즐 데이터
+docs/
+└── DESIGN.md           # 기획 설계와 밸런스 조정 기록
 ```
 
 ## ▶️ 실행 방법
