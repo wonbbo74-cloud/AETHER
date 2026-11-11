@@ -184,7 +184,7 @@ public class RewardGunSpawner : MonoBehaviour
         {
             t += Time.deltaTime / Mathf.Max(0.01f, popDuration);
             float eased = popCurve.Evaluate(Mathf.Clamp01(t));
-            if (rewardTransform == null) yield break;   // 튀어 오르는 도중에 주우면 사라진다(10/12 최종 점검 오류)
+            if (rewardTransform == null) yield break;   // 튀어 오르는 도중에 주우면 사라진다
             rewardTransform.position = Vector3.LerpUnclamped(startPosition, peakPosition, eased);
             yield return null;
         }

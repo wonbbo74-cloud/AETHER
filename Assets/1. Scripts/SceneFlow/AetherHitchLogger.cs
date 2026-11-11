@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class AetherHitchLogger : MonoBehaviour
 {
-    private float sceneStart;
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
     private static void Install()

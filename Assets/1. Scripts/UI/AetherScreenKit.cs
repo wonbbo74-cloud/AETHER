@@ -42,7 +42,7 @@ public static class AetherScreenKit
     /// <summary>디자인 이미지를 화면에 꽉 차게 깔고, 그 위에 요소를 올릴 기준 RectTransform을 돌려준다.</summary>
     /// <summary>
     /// 배경 그림에 박힌 글자를 같은 그림의 옆 빈 곳(srcOffsetX 만큼 옆)을 잘라 덮는다.
-    /// 단색으로 덮으면 선형 색 공간·후처리 때문에 색이 미묘하게 달라 네모가 보였다(10/12 최종 점검).
+    /// 단색으로 덮으면 선형 색 공간·후처리 때문에 색이 미묘하게 달라 네모가 보였다.
     /// </summary>
     public static void CreatePatch(RectTransform design, string name, float x0, float y0, float x1, float y1, float srcOffsetX)
     {

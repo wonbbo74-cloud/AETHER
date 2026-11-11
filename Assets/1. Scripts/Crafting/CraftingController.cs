@@ -1118,41 +1118,6 @@ public class CraftingController : MonoBehaviour
         return null;
     }
 
-    private static void ConfigureModuleText(TextMeshProUGUI text, string defaultText, Vector2 anchoredPosition, Vector2 size, float fontSize, Color color, TextAlignmentOptions alignment, FontStyles style, bool anchorRight = false)
-    {
-        if (text == null)
-            return;
-
-        RectTransform rect = text.rectTransform;
-        if (anchorRight)
-        {
-            rect.anchorMin = Vector2.one;
-            rect.anchorMax = Vector2.one;
-            rect.pivot = Vector2.one;
-        }
-        else
-        {
-            rect.anchorMin = new Vector2(0f, 1f);
-            rect.anchorMax = new Vector2(0f, 1f);
-            rect.pivot = new Vector2(0f, 1f);
-        }
-
-        rect.anchoredPosition = anchoredPosition;
-        rect.sizeDelta = size;
-
-        if (!string.IsNullOrEmpty(defaultText))
-            text.text = defaultText;
-        text.alignment = alignment;
-        text.color = color;
-        text.fontSize = fontSize;
-        text.fontStyle = style;
-        text.enableWordWrapping = false;
-        text.overflowMode = TextOverflowModes.Overflow;
-        text.raycastTarget = false;
-        text.gameObject.SetActive(true);
-        text.transform.SetAsLastSibling();
-    }
-
     private void EnsureResultSlotClickHandlers()
     {
         if (resultSlots == null)

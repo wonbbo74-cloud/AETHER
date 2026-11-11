@@ -127,12 +127,6 @@ public class PartsEquipModernRuntimeUI : MonoBehaviour
         }
     }
 
-    private void CreateCloseHint(RectTransform parent)
-    {
-        CreateText(parent, "ESC", new Vector2(-176f, -56f), new Vector2(70f, 44f), 25, FontStyles.Bold, TextAlignmentOptions.Center, Color.white, new Vector2(1f, 1f));
-        CreateText(parent, "닫기", new Vector2(-92f, -58f), new Vector2(70f, 40f), 25, FontStyles.Normal, TextAlignmentOptions.Left, Color.white, new Vector2(1f, 1f));
-    }
-
     private void BuildOwnedList(RectTransform parent)
     {
         for (int i = 0; i < 6; i++)
@@ -172,13 +166,6 @@ public class PartsEquipModernRuntimeUI : MonoBehaviour
         AddEquipSlot(parent, PartSlotType.Support, new Vector2(1092f, -410f), new Vector2(126f, 126f));
         AddEquipSlot(parent, PartSlotType.Leg, new Vector2(610f, -640f), new Vector2(126f, 126f));
         AddEquipSlot(parent, PartSlotType.Core, new Vector2(1092f, -640f), new Vector2(126f, 126f));
-    }
-
-    private void CreateBodySilhouette(RectTransform parent)
-    {
-        // 다리 '╱ ╲'(U+2571/2572)는 나눔·Liberation 폰트에 없어 □ □ 로 나왔다. 폰트에 있는 '/ \' 로 그린다.
-        TMP_Text body = CreateText(parent, "◎\n┃\n╋\n┃\n/  \\",new Vector2(258f, -220f), new Vector2(190f, 420f), 74, FontStyles.Normal, TextAlignmentOptions.Center, Cyan(0.7f));
-        body.raycastTarget = false;
     }
 
     private void AddEquipSlot(RectTransform parent, PartSlotType slot, Vector2 anchoredPosition, Vector2 size)
@@ -408,21 +395,6 @@ public class PartsEquipModernRuntimeUI : MonoBehaviour
         return part.itemSprite;
     }
 
-    private static RectTransform CreatePanel(RectTransform parent, string name, Vector2 anchoredPosition, Vector2 size, Vector2 anchor)
-    {
-        GameObject go = new GameObject(name, typeof(RectTransform), typeof(Image));
-        go.transform.SetParent(parent, false);
-        RectTransform rect = go.GetComponent<RectTransform>();
-        rect.anchorMin = anchor;
-        rect.anchorMax = anchor;
-        rect.pivot = anchor;
-        rect.anchoredPosition = anchoredPosition;
-        rect.sizeDelta = size;
-        Image image = go.GetComponent<Image>();
-        image.color = new Color(0.005f, 0.04f, 0.065f, 0.82f);
-        return rect;
-    }
-
     private static Button CreateButton(RectTransform parent, string name, Vector2 anchoredPosition, Vector2 size, Vector2 anchor)
     {
         GameObject go = new GameObject(name, typeof(RectTransform), typeof(Image), typeof(Button));
@@ -482,11 +454,6 @@ public class PartsEquipModernRuntimeUI : MonoBehaviour
         label.overflowMode = TextOverflowModes.Ellipsis;
         label.raycastTarget = false;
         return label;
-    }
-
-    private static Color Cyan(float alpha)
-    {
-        return new Color(0.0f, 0.82f, 1f, alpha);
     }
 
     private static Color SoftWhite(float alpha = 0.86f)

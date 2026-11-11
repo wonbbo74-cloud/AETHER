@@ -15,7 +15,7 @@ using UnityEngine.SceneManagement;
 public class AetherCityBombardment : MonoBehaviour
 {
     private const float FirstBlastDelay = 4f;
-    // 사용자 요청(10/11): 폭탄 소리를 더 자주, 실제로 터지는 불덩이가 보이게.
+    // 폭탄 소리를 더 자주, 실제로 터지는 불덩이가 보이게.
     private const float MinInterval = 4f;
     private const float MaxInterval = 9f;
     private const float CloseChance = 0.45f;

@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MainManager : MonoBehaviour
@@ -11,7 +11,7 @@ public class MainManager : MonoBehaviour
         GlobalManager.Audio.PlayBGM(mainBgmKey);
     }
 
-    // ¹öÆ°¿¡¼­ ÀÌ ¸Ş¼­µå¸¦ È£Ãâ
+    // ë²„íŠ¼ì—ì„œ ì´ ë©”ì„œë“œë¥¼ í˜¸ì¶œ
     public void StartGame(string nextSceneName)
     {
         AetherSceneFade.LoadScene(nextSceneName); // fade instead of a hard cut from the title screen

@@ -75,7 +75,7 @@ public class AetherModernHUD : MonoBehaviour
     private Image shieldFill;
     private Image thirstFill;
     private TextMeshProUGUI hpValueText;
-    private TextMeshProUGUI shieldValueText;   // Shiri 실드 숫자. 얇은 줄만으로는 맞아도 체력이 그대로라 "HP 가 안 닳는다"로 보였다(10/12)
+    private TextMeshProUGUI shieldValueText;   // Shiri 실드 숫자. 얇은 줄만으로는 맞아도 체력이 그대로라 "HP 가 안 닳는다"로 보였다
     private int lastShield = -1;
     private TextMeshProUGUI thirstValueText;
     private TextMeshProUGUI currentAmmoText;
@@ -922,7 +922,7 @@ public class AetherModernHUD : MonoBehaviour
             return;
 
         canvas.enabled = !showOnlyWhenGameplayPlayerExists || playerStatus != null || hankyulFire != null || moveYunseo != null;
-        // 캐릭터마다 보이는 칸이 다르다(사용자 결정): 미니맵은 Shiri 만, 총 관련 칸(탄약·조준점)은 Meka 만.
+        // 캐릭터마다 보이는 칸이 다르다: 미니맵은 Shiri 만, 총 관련 칸(탄약·조준점)은 Meka 만.
         bool gunHud = !isYunseoHud;
         if (ammoPanel != null)
             ammoPanel.gameObject.SetActive(gunHud);

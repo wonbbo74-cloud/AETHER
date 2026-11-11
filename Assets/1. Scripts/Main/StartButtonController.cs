@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System.Collections;
@@ -56,7 +56,7 @@ public class StartButtonController : MonoBehaviour,
     {
         GlobalManager.Audio.PlaySFX(clickSound);
 
-        // MainManager¿¡°Ô ¾À ÀüÈ¯ ¿äÃ»
+        // MainManagerì—ê²Œ ì”¬ ì „í™˜ ìš”ì²­
         FindObjectOfType<MainManager>().StartGame(nextSceneName);
     }
 

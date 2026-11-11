@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 public class SimpleAlertLevelManager : MonoBehaviour
 {
@@ -24,12 +24,12 @@ public class SimpleAlertLevelManager : MonoBehaviour
     public void AddAlert(int amount)
     {
         currentAlertLevel = Mathf.Clamp(currentAlertLevel + amount, 0, maxAlertLevel);
-        Debug.Log($"[Alert Level] ÇöÀç °æ°èµµ: {currentAlertLevel}");
+        Debug.Log($"[Alert Level] í˜„ì¬ ê²½ê³„ë„: {currentAlertLevel}");
     }
 
     public void ReduceAlert(int amount)
     {
         currentAlertLevel = Mathf.Clamp(currentAlertLevel - amount, 0, maxAlertLevel);
-        Debug.Log($"[Alert Level] ÇöÀç °æ°èµµ: {currentAlertLevel}");
+        Debug.Log($"[Alert Level] í˜„ì¬ ê²½ê³„ë„: {currentAlertLevel}");
     }
 }

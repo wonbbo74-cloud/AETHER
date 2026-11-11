@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -7,10 +7,10 @@ public class SceneFader : MonoBehaviour
 {
     public static SceneFader Instance;
 
-    [Header("ÆäÀÌµå ÀÌ¹ÌÁö")]
+    [Header("í˜ì´ë“œ ì´ë¯¸ì§€")]
     [SerializeField] private Image fadeImage;
 
-    [Header("±âº» ½Ã°£")]
+    [Header("ê¸°ë³¸ ì‹œê°„")]
     [SerializeField] private float defaultFadeOutTime = 1.0f;
     [SerializeField] private float defaultFadeInTime = 1.0f;
 
@@ -29,7 +29,7 @@ public class SceneFader : MonoBehaviour
 
         if (fadeImage == null)
         {
-            Debug.LogError("[SceneFader] Fade Image°¡ ¿¬°áµÇÁö ¾Ê¾Ò½À´Ï´Ù.");
+            Debug.LogError("[SceneFader] Fade Imageê°€ ì—°ê²°ë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.");
             return;
         }
 
@@ -48,7 +48,7 @@ public class SceneFader : MonoBehaviour
 
         if (string.IsNullOrEmpty(sceneName))
         {
-            Debug.LogWarning("[SceneFader] sceneNameÀÌ ºñ¾î ÀÖ½À´Ï´Ù.");
+            Debug.LogWarning("[SceneFader] sceneNameì´ ë¹„ì–´ ìˆìŠµë‹ˆë‹¤.");
             return;
         }
 

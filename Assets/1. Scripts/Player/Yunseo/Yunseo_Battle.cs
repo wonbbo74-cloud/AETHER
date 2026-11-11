@@ -96,7 +96,7 @@ public class Yunseo_Battle : MonoBehaviour
     // ---------- 내부 상태 ----------
     private bool inputLocked = false;
 
-    // 배틀그라운드식 잽(10/12 사용자 "펀치가 연속으로 안 된다"): 누를 때마다(누르고 있으면 계속) 일정 박자로
+    // 배틀그라운드식 잽: 누를 때마다(누르고 있으면 계속) 일정 박자로
     // 오른손·왼손을 번갈아 곧게 뻗는다. 예전 콤보는 애니메이션 이벤트 창에 맞춰 눌러야만 이어져 자주 끊겼다.
     [Header("FPS Jab (PUBG style)")]
     [SerializeField] private bool fpsJabMode = true;
@@ -207,7 +207,7 @@ public class Yunseo_Battle : MonoBehaviour
             comboInputQueued = false;
 
         // 콤보는 애니메이션 이벤트(AE_ComboDecision)로만 끝난다. 맞거나 다른 동작에 끊겨 이벤트가 안 오면
-        // comboActive 가 영영 켜진 채로 남아 그 뒤로 펀치가 한 대도 안 나갔다(10/12 최종 점검, 05 에서 35초간 먹통).
+        // comboActive 가 영영 켜진 채로 남아 그 뒤로 펀치가 한 대도 안 나갔다(05 에서 35초간 먹통).
         // 입력 창이 닫히고 1초가 지나도 소식이 없으면 콤보를 끝내 다시 칠 수 있게 한다.
         if (comboActive && !comboDecisionPending && Time.time > comboExpireTime + 1f)
             EndCombo(false);
@@ -347,10 +347,10 @@ public class Yunseo_Battle : MonoBehaviour
         Destroy(probe);
     }
 
-    // 맞았을 때 '퍽' 하는 묵직한 타격음(10/12 사용자 "좀 더 때리는 소리"): 기존 타격음을 크게 + 낮은 충격음을 겹친다.
+    // 맞았을 때 '퍽' 하는 묵직한 타격음: 기존 타격음을 크게 + 낮은 충격음을 겹친다.
     private void PlayHeavyHitSound()
     {
-        // '퍽'만 두 겹으로 크게. 예전에 겹치던 충전 펀치 소리는 금속 울림(댕동)이 들려 뺐다(10/13 사용자).
+        // '퍽'만 두 겹으로 크게. 예전에 겹치던 충전 펀치 소리는 금속 울림(댕동)이 들려 뺐다.
         AetherAudio.Play2D("punch_thud", 1f, 1f, 0.07f);
         AetherAudio.Play2D("punch_thud", 1f, 0.92f, 0.07f);
     }

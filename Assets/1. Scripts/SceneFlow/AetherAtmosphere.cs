@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 /// <summary>
 /// 씬마다 제각각인 환경광·안개·후처리를 한 분위기로 맞춘다.
 ///
-/// 04~07(사용자가 실제로 쓰는 구간)은 '어둡고 채도 낮은, 살짝 따뜻한 회색' 하나의 톤으로 묶는다.
+/// 04~07(실제 플레이 구간)은 '어둡고 채도 낮은, 살짝 따뜻한 회색' 하나의 톤으로 묶는다.
 ///   05.폐허된 도시 : 실외. 회갈색 안개(Exponential), 흐린 하늘빛 환경광
 ///   04·06·07       : 실내. 같은 색 계열의 짙은 안개와 낮은 환경광, 조명은 씬에 배치된 불빛이 주연
 /// 색 보정·블룸·AO·비네트·필름 그레인은 씬별 PostProcessProfile(Resources/AETHERRuntime/Mood)에 있다.
@@ -62,7 +62,7 @@ public class AetherAtmosphere : MonoBehaviour
 
         if (sceneName.StartsWith("04.", System.StringComparison.Ordinal))
         {
-            // 2026-10-08 사용자 "벙커는 좀 더 밝게": 안개를 걷고 환경광을 올린다(노출·lift 는 04 프로필).
+            // 벙커는 더 밝게: 안개를 걷고 환경광을 올린다(노출·lift 는 04 프로필).
             mood = Indoor(0.020f, 1.05f);
             mood.reverb = AudioReverbPreset.Room;
             return true;

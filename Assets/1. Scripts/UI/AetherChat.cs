@@ -53,14 +53,14 @@ public class AetherChat : MonoBehaviour
         "Hankyul_Fire", "Hankyul_Battle", "Yunseo_Battle", "EMPThrow", "PlayerEMPThrower",
         "HangyeolPartAbilityController", "YunseoPartAbilityController",
         // 상호작용
-        "PlayerInteractor", "PlayerHoldInteractor", "PlayerLookInteractor", "PlayerLookInteractor2",
+        "PlayerInteractor", "PlayerHoldInteractor",
         "ProximityHoldPrompt", "ElevatorProximityHoldPrompt", "ProximityPuzzleOpener", "ProximitySceneTransition",
-        "PartsWorkbenchInteractable", "PartsMakeProximityAutoOpen", "PartCraftingOpener",
-        "ConsolePuzzleInteractor", "Lab_DoorQTEInteractor", "ShopManager",
+        "PartsWorkbenchInteractable",
+        "Lab_DoorQTEInteractor", "ShopManager",
         // 화면 단축키(I·P·숫자)
         "QuickSlotManager", "InventoryUI", "PaperInventoryPreviewUI", "AetherInventoryScreen",
         "AetherPartsEquipScreen", "AetherPartsCraftingScreen", "PartsUIHotkeyController",
-        "PartsSlot2ToggleController", "PartEquipmentUI",
+        "PartsSlot2ToggleController",
     };
 
     private struct Message

@@ -80,7 +80,7 @@ public class EMPGrenade : MonoBehaviour
         if (explosionFxPrefab != null)
             Instantiate(explosionFxPrefab, center, Quaternion.identity);
 
-        // 전자기 방전: 터지는 소리 + 지직거리는 아크(EMPExplosionFX 가 어느 프리팹에도 안 붙어 무음이었다)
+        // 전자기 방전: 터지는 소리 + 지직거리는 아크
         AetherAudio.PlayAt("emp_blast", center, 1f, 3f, 50f, 0.04f, 1f, 50);
 
         Collider[] hits = Physics.OverlapSphere(center, empRadius, targetMask, QueryTriggerInteraction.Collide);

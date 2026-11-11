@@ -1,7 +1,7 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 public class DoorSceneTransitionTarget : MonoBehaviour
 {
-    [Header("ÀÌµ¿ÇÒ ¾À ÀÌ¸§")]
+    [Header("ì´ë™í•  ì”¬ ì´ë¦„")]
     public string nextSceneName = "NextScene";
 }

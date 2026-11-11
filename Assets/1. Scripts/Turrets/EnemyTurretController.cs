@@ -205,7 +205,6 @@ public class EnemyTurretController : MonoBehaviour
         AetherGunFX.ShapeBullet(bulletObject, direction);
         AetherGunFX.Flash(spawnPosition, direction, 0.26f);
         AetherShotAudio.PlayTurretBoom(spawnPosition);
-        AetherShotOrigin.Mark(spawnPosition, direction, name);
         AetherGunFX.Kick(muzzle != null ? muzzle.parent : yawPivot, direction, 0.06f, 3f);
 
         EnemyBullet bullet = bulletObject.GetComponent<EnemyBullet>();

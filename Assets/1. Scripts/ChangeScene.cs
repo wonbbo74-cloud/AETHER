@@ -1,15 +1,15 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class ChangeScene : MonoBehaviour
 {
-    [Header("ÀÌ Æ®¸®°Å¿¡ µé¾î¿À¸é ·ÎµåÇÒ ¾À ÀÌ¸§(Build Settings¿¡ µî·ÏµÈ ÀÌ¸§)")]
+    [Header("ì´ íŠ¸ë¦¬ê±°ì— ë“¤ì–´ì˜¤ë©´ ë¡œë“œí•  ì”¬ ì´ë¦„(Build Settingsì— ë“±ë¡ëœ ì´ë¦„)")]
     [SerializeField] private string targetSceneName;
 
-    [Header("ÇÃ·¹ÀÌ¾î ÅÂ±×")]
+    [Header("í”Œë ˆì´ì–´ íƒœê·¸")]
     [SerializeField] private string playerTag = "Player";
 
-    [Header("Áßº¹ È£Ãâ ¹æÁö")]
+    [Header("ì¤‘ë³µ í˜¸ì¶œ ë°©ì§€")]
     [SerializeField] private bool oneShot = true;
 
     private bool _loaded;
@@ -21,7 +21,7 @@ public class ChangeScene : MonoBehaviour
 
         if (string.IsNullOrWhiteSpace(targetSceneName))
         {
-            Debug.LogError($"{name}: targetSceneNameÀÌ ºñ¾îÀÖÀ½");
+            Debug.LogError($"{name}: targetSceneNameì´ ë¹„ì–´ìˆìŒ");
             return;
         }
 

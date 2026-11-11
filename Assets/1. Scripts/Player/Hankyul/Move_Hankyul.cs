@@ -652,7 +652,7 @@ public class Move_Hankyul : MonoBehaviour
             return;
         }
 
-        // 짧게 누르면 일반 점프. 파츠를 끼면 톡 눌러도 최소 힘(12)으로 7m 를 뛰어 일반 점프가 사라졌다(10/12 사용자 요청).
+        // 짧게 누르면 일반 점프. 파츠를 끼면 톡 눌러도 최소 힘(12)으로 7m 를 뛰어 일반 점프가 사라졌다.
         if (superJumpChargeTime < SuperJumpTapThreshold)
         {
             isChargingSuperJump = false;

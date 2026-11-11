@@ -101,20 +101,6 @@ public class QuickSlotManager : MonoBehaviour
             quickSlots[q] = q < recentIndices.Count ? recentIndices[q] : -1;
     }
 
-    private bool IsInventoryIndexAlreadyAssigned(int invIndex)
-    {
-        for (int i = 0; i < quickSlots.Length; i++)
-            if (quickSlots[i] == invIndex) return true;
-        return false;
-    }
-
-    private int FindEmptyQuickSlot()
-    {
-        for (int i = 0; i < quickSlots.Length; i++)
-            if (quickSlots[i] == -1) return i;
-        return -1;
-    }
-
     public void AssignSlot(int quickSlotIndex, int inventorySlotIndex)
     {
         if (!IsValidQuickIndex(quickSlotIndex)) return;

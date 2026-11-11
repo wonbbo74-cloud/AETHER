@@ -687,15 +687,6 @@ public class AetherFactoryGateBreach : MonoBehaviour
         return hidden;
     }
 
-    private static Bounds Measure(Renderer[] renderers)
-    {
-        Bounds bounds = renderers[0].bounds;
-        for (int i = 1; i < renderers.Length; i++)
-            bounds.Encapsulate(renderers[i].bounds);
-
-        return bounds;
-    }
-
     private static Lab_Door FindDoor()
     {
         Vector3 openingCenter = new Vector3(-10.1f, 1.6f, (OpeningMinZ + OpeningMaxZ) * 0.5f);

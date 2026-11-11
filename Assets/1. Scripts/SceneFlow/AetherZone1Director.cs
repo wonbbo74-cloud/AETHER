@@ -10,7 +10,7 @@ using UnityEngine.SceneManagement;
 /// 이 씬은 바이너리로 저장돼 있어 파일을 직접 고칠 수 없다. 그래서 씬은 건드리지 않고
 /// 실행할 때 필요한 것만 세운다. 되돌리려면 이 스크립트만 지우면 된다.
 ///
-/// === 씬 실측 (AETHER/진단/1구역 경로 측정) ===
+/// === 씬 실측값 ===
 ///   엘리베이터 (1322.6, 121.8, 1414) — 공장 옥상 Factory2Roof01 위
 ///   옥상은 전투구역 방향으로 48m까지만 이어지고, 그 끝 (1277.5, 121.8, 1394.7)에서 끊긴다
 ///   옥상 아래 지면은 y 84m — 낙차 37.7m
@@ -419,7 +419,7 @@ public class AetherZone1Director : MonoBehaviour
     /// 옥상 끝에서 배수 콘솔까지, 씬에 원래 있던 구조물을 밟고 건넌다.
     ///
     /// 경로 위에서 수면(103.5m) 위로 나와 있는 구조물을 실측해서 골랐다
-    /// (AETHER/진단/1구역 경로 측정). 이것들이 코스의 뼈대다.
+    /// 이것들이 코스의 뼈대다.
     /// 다만 구조물 사이가 30~44m씩 벌어져 있어 슈퍼점프로는 한 번에 못 넘기 때문에,
     /// 그 사이에만 콘크리트 판을 몇 장 놓아 징검다리를 만든다.
     /// </summary>
@@ -468,8 +468,8 @@ public class AetherZone1Director : MonoBehaviour
         forward.y = 0f;
         forward.Normalize();
 
-        // 좌우 방향은 측정 도구(AETHER/진단/1구역 경로 측정)가 찍는 부호와 같아야 한다.
-        // 도구는 Cross(forward, 대상).y 로 좌우를 재는데, 그 값은 (-forward.z, 0, forward.x)
+        // 좌우 방향은 경로를 잴 때 쓴 부호와 같아야 한다.
+        // 좌우는 Cross(forward, 대상).y 로 재는데, 그 값은 (-forward.z, 0, forward.x)
         // 방향의 계수와 부호가 반대다. 이걸 맞추지 않으면 표의 좌표를 그대로 썼는데도
         // 반대편 50~60m를 뒤지게 된다(실제로 Hangar와 Duct를 못 찾고 있었다).
         Vector3 side = new Vector3(forward.z, 0f, -forward.x);

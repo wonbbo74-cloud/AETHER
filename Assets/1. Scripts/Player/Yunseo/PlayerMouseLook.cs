@@ -1,42 +1,42 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 #if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem;
 #endif
 
 /// <summary>
-/// ¾ÈÀüÇÑ ¸¶¿ì½º ·è ½ºÅ©¸³Æ®
-/// - ÇÃ·¹ÀÌ¾î ¸öÃ¼´Â YÃà È¸Àü¸¸ ¼öÇà
-/// - Ä«¸Ş¶ó ÇÇ¹şÀº XÃà(ÇÇÄ¡)¸¸ ·ÎÄÃ È¸Àü(Quaternion.Euler)À¸·Î ¼öÇà
-/// - ¼öÁ÷ È¸ÀüÀº float º¯¼ö(xRotation)¿¡ º¸°üÇÏ°í -80..80·Î Å¬·¥ÇÁ
-/// - ¸¶¿ì½º °¨µµ¿Í deltaTimeÀ» »ç¿ë, ÀÔ·Â ¹æ½Ä¿¡ µû¶ó ÀûÀıÈ÷ Ã³¸®
-/// - null Ã¼Å© ¹× ¾ÈÀü ÃÊ±âÈ­ Æ÷ÇÔ
+/// ì•ˆì „í•œ ë§ˆìš°ìŠ¤ ë£© ìŠ¤í¬ë¦½íŠ¸
+/// - í”Œë ˆì´ì–´ ëª¸ì²´ëŠ” Yì¶• íšŒì „ë§Œ ìˆ˜í–‰
+/// - ì¹´ë©”ë¼ í”¼ë²—ì€ Xì¶•(í”¼ì¹˜)ë§Œ ë¡œì»¬ íšŒì „(Quaternion.Euler)ìœ¼ë¡œ ìˆ˜í–‰
+/// - ìˆ˜ì§ íšŒì „ì€ float ë³€ìˆ˜(xRotation)ì— ë³´ê´€í•˜ê³  -80..80ë¡œ í´ë¨í”„
+/// - ë§ˆìš°ìŠ¤ ê°ë„ì™€ deltaTimeì„ ì‚¬ìš©, ì…ë ¥ ë°©ì‹ì— ë”°ë¼ ì ì ˆíˆ ì²˜ë¦¬
+/// - null ì²´í¬ ë° ì•ˆì „ ì´ˆê¸°í™” í¬í•¨
 /// </summary>
 public class PlayerMouseLook : MonoBehaviour
 {
-    [Header("References (ÇÊ¼ö)")]
-    [Tooltip("YÃà È¸ÀüÀ» Àû¿ëÇÒ Transform (º¸Åë ÇÃ·¹ÀÌ¾î ·çÆ®/¸öÃ¼). ºñ¾îÀÖÀ¸¸é ÀÌ ¿ÀºêÁ§Æ® »ç¿ë")]
+    [Header("References (í•„ìˆ˜)")]
+    [Tooltip("Yì¶• íšŒì „ì„ ì ìš©í•  Transform (ë³´í†µ í”Œë ˆì´ì–´ ë£¨íŠ¸/ëª¸ì²´). ë¹„ì–´ìˆìœ¼ë©´ ì´ ì˜¤ë¸Œì íŠ¸ ì‚¬ìš©")]
     public Transform playerBody;
 
-    [Tooltip("XÃà È¸ÀüÀ» Àû¿ëÇÒ Ä«¸Ş¶ó ÇÇ¹ş (Ä«¸Ş¶óÀÇ ºÎ¸ğ ¶Ç´Â Ä«¸Ş¶ó ÀÚÃ¼). ºñ¾îÀÖÀ¸¸é ÀÚ½Ä Camera¸¦ Ã£¾Æ ÀÚµ¿ ¼³Á¤")]
+    [Tooltip("Xì¶• íšŒì „ì„ ì ìš©í•  ì¹´ë©”ë¼ í”¼ë²— (ì¹´ë©”ë¼ì˜ ë¶€ëª¨ ë˜ëŠ” ì¹´ë©”ë¼ ìì²´). ë¹„ì–´ìˆìœ¼ë©´ ìì‹ Cameraë¥¼ ì°¾ì•„ ìë™ ì„¤ì •")]
     public Transform cameraPivot;
 
     [Header("Settings")]
-    [Tooltip("¸¶¿ì½º °¨µµ")]
+    [Tooltip("ë§ˆìš°ìŠ¤ ê°ë„")]
     public float mouseSensitivity = 200f;
     public bool invertLookY = false;
     public bool invertLookX = false;
 
-    [Tooltip("¼öÁ÷ È¸Àü ÃÖ¼Ò °¢µµ")]
+    [Tooltip("ìˆ˜ì§ íšŒì „ ìµœì†Œ ê°ë„")]
     public float minVerticalAngle = -80f;
 
-    [Tooltip("¼öÁ÷ È¸Àü ÃÖ´ë °¢µµ")]
+    [Tooltip("ìˆ˜ì§ íšŒì „ ìµœëŒ€ ê°ë„")]
     public float maxVerticalAngle = 80f;
 
-    [Tooltip("½ÃÀÛ ½Ã Ä¿¼­ Àá±İ/¼û±è")]
+    [Tooltip("ì‹œì‘ ì‹œ ì»¤ì„œ ì ê¸ˆ/ìˆ¨ê¹€")]
     public bool lockCursorOnStart = true;
 
-    // ³»ºÎ »óÅÂ
-    private float xRotation = 0f; // ¼öÁ÷(ÇÇÄ¡) °¢µµ ÀúÀå (¾ÈÁ¤ÀûÀ¸·Î ´©Àû)
+    // ë‚´ë¶€ ìƒíƒœ
+    private float xRotation = 0f; // ìˆ˜ì§(í”¼ì¹˜) ê°ë„ ì €ì¥ (ì•ˆì •ì ìœ¼ë¡œ ëˆ„ì )
     private bool initialized = false;
 
     private void Awake()
@@ -63,33 +63,33 @@ public class PlayerMouseLook : MonoBehaviour
         if (initialized) return;
 
         if (playerBody == null)
-            playerBody = transform; // ±âº»: ÀÌ ¿ÀºêÁ§Æ®¸¦ ¸öÃ¼·Î »ç¿ë
+            playerBody = transform; // ê¸°ë³¸: ì´ ì˜¤ë¸Œì íŠ¸ë¥¼ ëª¸ì²´ë¡œ ì‚¬ìš©
 
         if (cameraPivot == null)
         {
-            // ÀÚ½Ä¿¡ Camera°¡ ÀÖÀ¸¸é ±× ºÎ¸ğ(ÇÇ¹ş)¸¦ cameraPivotÀ¸·Î »ç¿ë
+            // ìì‹ì— Cameraê°€ ìˆìœ¼ë©´ ê·¸ ë¶€ëª¨(í”¼ë²—)ë¥¼ cameraPivotìœ¼ë¡œ ì‚¬ìš©
             Camera cam = GetComponentInChildren<Camera>();
             if (cam != null)
             {
-                // Ä«¸Ş¶óÀÇ ºÎ¸ğ°¡ ÀÖÀ¸¸é ÇÇ¹şÀ¸·Î, ¾øÀ¸¸é Ä«¸Ş¶ó ÀÚÃ¼¸¦ ÇÇ¹şÀ¸·Î »ç¿ë
+                // ì¹´ë©”ë¼ì˜ ë¶€ëª¨ê°€ ìˆìœ¼ë©´ í”¼ë²—ìœ¼ë¡œ, ì—†ìœ¼ë©´ ì¹´ë©”ë¼ ìì²´ë¥¼ í”¼ë²—ìœ¼ë¡œ ì‚¬ìš©
                 cameraPivot = cam.transform.parent != null ? cam.transform.parent : cam.transform;
             }
         }
 
-        // ÃÖÁ¾ null Ã¼Å©
+        // ìµœì¢… null ì²´í¬
         if (cameraPivot == null)
-            Debug.LogWarning("[PlayerMouseLook] cameraPivotÀÌ ¼³Á¤µÇÁö ¾Ê¾Ò½À´Ï´Ù. Ä«¸Ş¶ó ÇÇ¹şÀ» ¼öµ¿À¸·Î ÇÒ´çÇÏ¼¼¿ä.", this);
+            Debug.LogWarning("[PlayerMouseLook] cameraPivotì´ ì„¤ì •ë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤. ì¹´ë©”ë¼ í”¼ë²—ì„ ìˆ˜ë™ìœ¼ë¡œ í• ë‹¹í•˜ì„¸ìš”.", this);
 
         initialized = true;
     }
 
     private void Update()
     {
-        // ¾ÈÀü¼º: ÂüÁ¶°¡ ¾øÀ¸¸é µ¿ÀÛÇÏÁö ¾ÊÀ½
+        // ì•ˆì „ì„±: ì°¸ì¡°ê°€ ì—†ìœ¼ë©´ ë™ì‘í•˜ì§€ ì•ŠìŒ
         if (playerBody == null || cameraPivot == null)
             return;
 
-        // ÀÔ·Â ÀĞ±â (»õ InputSystem ¿ì¼±, ¾øÀ¸¸é ·¹°Å½Ã Input »ç¿ë)
+        // ì…ë ¥ ì½ê¸° (ìƒˆ InputSystem ìš°ì„ , ì—†ìœ¼ë©´ ë ˆê±°ì‹œ Input ì‚¬ìš©)
         Vector2 rawDelta = Vector2.zero;
         bool usedNewInputMouse = false;
 
@@ -98,7 +98,7 @@ public class PlayerMouseLook : MonoBehaviour
         if (mouse != null)
         {
             rawDelta = mouse.delta.ReadValue();
-            // ¾ÆÁÖ ÀÛÀº ³ëÀÌÁî ¹«½Ã
+            // ì•„ì£¼ ì‘ì€ ë…¸ì´ì¦ˆ ë¬´ì‹œ
             if (rawDelta.sqrMagnitude > 0.000001f)
                 usedNewInputMouse = true;
         }
@@ -106,33 +106,33 @@ public class PlayerMouseLook : MonoBehaviour
 
         if (!usedNewInputMouse)
         {
-            // ·¹°Å½Ã ÀÔ·Â(¶Ç´Â °ÔÀÓÆĞµå ½ºÆ½ÀÌ ¹ÙÀÎµùµÈ °æ¿ì)
-            // Input.GetAxis °è¿­Àº ÇÁ·¹ÀÓ º¸Á¤ ÇÊ¿ä -> Time.deltaTime »ç¿ë
+            // ë ˆê±°ì‹œ ì…ë ¥(ë˜ëŠ” ê²Œì„íŒ¨ë“œ ìŠ¤í‹±ì´ ë°”ì¸ë”©ëœ ê²½ìš°)
+            // Input.GetAxis ê³„ì—´ì€ í”„ë ˆì„ ë³´ì • í•„ìš” -> Time.deltaTime ì‚¬ìš©
             rawDelta.x = Input.GetAxis("Mouse X");
             rawDelta.y = Input.GetAxis("Mouse Y");
         }
 
-        // ÀåÄ¡ À¯Çü¿¡ µû¶ó ÇÁ·¹ÀÓ ½ºÄÉÀÏ °áÁ¤
-        // - »õ InputSystemÀÇ Mouse.delta: ÇÁ·¹ÀÓ µ¨Å¸°ª(ÇÈ¼¿ ´ÜÀ§) -> Time.deltaTime °öÇÏ¸é °ú¼Ò/Æ¢´Â Çö»ó ¹ß»ıÇÏ¹Ç·Î °öÇÏÁö ¾ÊÀ½
-        // - ·¹°Å½Ã GetAxis: ÇÁ·¹ÀÓ µ¶¸³ÀûÀ¸·Î Time.deltaTimeÀ» °öÇØÁÜ
+        // ì¥ì¹˜ ìœ í˜•ì— ë”°ë¼ í”„ë ˆì„ ìŠ¤ì¼€ì¼ ê²°ì •
+        // - ìƒˆ InputSystemì˜ Mouse.delta: í”„ë ˆì„ ë¸íƒ€ê°’(í”½ì…€ ë‹¨ìœ„) -> Time.deltaTime ê³±í•˜ë©´ ê³¼ì†Œ/íŠ€ëŠ” í˜„ìƒ ë°œìƒí•˜ë¯€ë¡œ ê³±í•˜ì§€ ì•ŠìŒ
+        // - ë ˆê±°ì‹œ GetAxis: í”„ë ˆì„ ë…ë¦½ì ìœ¼ë¡œ Time.deltaTimeì„ ê³±í•´ì¤Œ
         float frameScale = usedNewInputMouse ? 1f : Time.deltaTime;
 
         float mouseX = rawDelta.x * mouseSensitivity * frameScale * (invertLookX ? -1f : 1f);
         float mouseY = rawDelta.y * mouseSensitivity * frameScale * (invertLookY ? -1f : 1f);
 
-        // YÃà(¼öÆò) È¸Àü: ÇÃ·¹ÀÌ¾î ¸öÃ¼¿¡ Àû¿ë (transform.Rotate »ç¿ë)
-        // Space.Self·Î ·ÎÄÃ Y È¸Àü(º¸Åë »óÇâ y) Àû¿ë
+        // Yì¶•(ìˆ˜í‰) íšŒì „: í”Œë ˆì´ì–´ ëª¸ì²´ì— ì ìš© (transform.Rotate ì‚¬ìš©)
+        // Space.Selfë¡œ ë¡œì»¬ Y íšŒì „(ë³´í†µ ìƒí–¥ y) ì ìš©
         playerBody.Rotate(Vector3.up * mouseX, Space.Self);
 
-        // XÃà(¼öÁ÷) È¸Àü: xRotation ´©Àû -> Clamp -> cameraPivot.localRotation = Quaternion.Euler(...)
-        xRotation -= mouseY; // ¸¶¿ì½º À§·Î ¿Ã¸®¸é ½Ã¼±ÀÌ ³»·Á°¨(ÀÏ¹İÀû)
+        // Xì¶•(ìˆ˜ì§) íšŒì „: xRotation ëˆ„ì  -> Clamp -> cameraPivot.localRotation = Quaternion.Euler(...)
+        xRotation -= mouseY; // ë§ˆìš°ìŠ¤ ìœ„ë¡œ ì˜¬ë¦¬ë©´ ì‹œì„ ì´ ë‚´ë ¤ê°(ì¼ë°˜ì )
         xRotation = Mathf.Clamp(xRotation, minVerticalAngle, maxVerticalAngle);
 
         cameraPivot.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
     }
 
     /// <summary>
-    /// ¿ÜºÎ¿¡¼­ Ä¿¼­ Àá±İ »óÅÂ¸¦ ¼³Á¤ÇÒ ¼ö ÀÖÀ½
+    /// ì™¸ë¶€ì—ì„œ ì»¤ì„œ ì ê¸ˆ ìƒíƒœë¥¼ ì„¤ì •í•  ìˆ˜ ìˆìŒ
     /// </summary>
     public void SetCursorLock(bool locked)
     {

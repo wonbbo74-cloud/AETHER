@@ -299,7 +299,6 @@ public class RobotCombat : MonoBehaviour
 
         // 총구에 붙은 빛줄기가 '총에서 나왔다'는 걸 보여 준다. 총알만으로는 안 읽힌다.
         AetherGunFX.LaserMuzzleBeam(spawnPos, dir);
-        AetherShotOrigin.Mark(spawnPos, dir, name);
         AetherGunFX.FlashLaser(spawnPos, dir);
         AetherShotAudio.PlayLaser(spawnPos);
 

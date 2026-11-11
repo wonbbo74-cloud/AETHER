@@ -1,17 +1,17 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
 public class InventoryDetailUI : MonoBehaviour
 {
-    [Header("±âº» Á¤º¸ UI")]
-    public Image itemImage;                 // ¿À¸¥ÂÊ »ó´Ü Å« ÀÌ¹ÌÁö
-    public TextMeshProUGUI nameText;        // ¾ÆÀÌÅÛ ÀÌ¸§
-    public TextMeshProUGUI descriptionText; // ¾ÆÀÌÅÛ ¼³¸í
+    [Header("ê¸°ë³¸ ì •ë³´ UI")]
+    public Image itemImage;                 // ì˜¤ë¥¸ìª½ ìƒë‹¨ í° ì´ë¯¸ì§€
+    public TextMeshProUGUI nameText;        // ì•„ì´í…œ ì´ë¦„
+    public TextMeshProUGUI descriptionText; // ì•„ì´í…œ ì„¤ëª…
 
-    [Header("È¿°ú ¸®½ºÆ® UI")]
-    public Transform effectContainer;       // È¿°ú ¶óÀÎµéÀÌ µé¾î°¥ ºÎ¸ğ(Vertical Layout Group ±ÇÀå)
-    public GameObject effectLinePrefab;     // "Icon + Text" ÇÑ ÁÙÂ¥¸® ÇÁ¸®ÆÕ
+    [Header("íš¨ê³¼ ë¦¬ìŠ¤íŠ¸ UI")]
+    public Transform effectContainer;       // íš¨ê³¼ ë¼ì¸ë“¤ì´ ë“¤ì–´ê°ˆ ë¶€ëª¨(Vertical Layout Group ê¶Œì¥)
+    public GameObject effectLinePrefab;     // "Icon + Text" í•œ ì¤„ì§œë¦¬ í”„ë¦¬íŒ¹
 
     public void ShowItem(ItemData item)
     {
@@ -21,7 +21,7 @@ public class InventoryDetailUI : MonoBehaviour
             return;
         }
 
-        // ±âº» Á¤º¸ Ç¥½Ã
+        // ê¸°ë³¸ ì •ë³´ í‘œì‹œ
         if (itemImage != null)
         {
             itemImage.sprite = item.itemSprite;
@@ -34,7 +34,7 @@ public class InventoryDetailUI : MonoBehaviour
         if (descriptionText != null)
             descriptionText.text = item.description;
 
-        // ±âÁ¸ È¿°ú ¶óÀÎ Á¦°Å
+        // ê¸°ì¡´ íš¨ê³¼ ë¼ì¸ ì œê±°
         if (effectContainer != null)
         {
             foreach (Transform child in effectContainer)
@@ -43,16 +43,16 @@ public class InventoryDetailUI : MonoBehaviour
             }
         }
 
-        // È¿°ú°¡ ¾øÀ¸¸é ³¡
+        // íš¨ê³¼ê°€ ì—†ìœ¼ë©´ ë
         if (item.effects == null || item.effects.Length == 0 || effectContainer == null || effectLinePrefab == null)
             return;
 
-        // È¿°ú ¸®½ºÆ® »ı¼º
+        // íš¨ê³¼ ë¦¬ìŠ¤íŠ¸ ìƒì„±
         foreach (var effect in item.effects)
         {
             GameObject line = Instantiate(effectLinePrefab, effectContainer);
 
-            // ÇÁ¸®ÆÕ ±¸Á¶: Icon(Image) + Text (TMP)Value(TextMeshProUGUI)
+            // í”„ë¦¬íŒ¹ êµ¬ì¡°: Icon(Image) + Text (TMP)Value(TextMeshProUGUI)
             Image iconImage = null;
             TextMeshProUGUI text = null;
 
@@ -64,7 +64,7 @@ public class InventoryDetailUI : MonoBehaviour
             if (textTr != null)
                 text = textTr.GetComponent<TextMeshProUGUI>();
 
-            // ¾ÆÀÌÄÜ Ã³¸®
+            // ì•„ì´ì½˜ ì²˜ë¦¬
             if (iconImage != null)
             {
                 if (effect.icon != null)
@@ -78,23 +78,23 @@ public class InventoryDetailUI : MonoBehaviour
                 }
             }
 
-            // ÅØ½ºÆ® »ı¼º
+            // í…ìŠ¤íŠ¸ ìƒì„±
             if (text != null)
             {
                 switch (effect.type)
                 {
                     case EffectType.Health:
-                        // ex) "Ã¼·Â + 3"
-                        text.text = effect.customText;   // ÀÌ¹Ì "Ã¼·Â + 3" À¸·Î ³Ö¾î³ùÀ¸´Ï ±×´ë·Î »ç¿ë
+                        // ex) "ì²´ë ¥ + 3"
+                        text.text = effect.customText;   // ì´ë¯¸ "ì²´ë ¥ + 3" ìœ¼ë¡œ ë„£ì–´ë†¨ìœ¼ë‹ˆ ê·¸ëŒ€ë¡œ ì‚¬ìš©
                         break;
 
                     case EffectType.Thirst:
-                        // ex) "¼öºĞ - 1"
+                        // ex) "ìˆ˜ë¶„ - 1"
                         text.text = effect.customText;
                         break;
 
                     case EffectType.CustomText:
-                        // ex) "½Ä·®"
+                        // ex) "ì‹ëŸ‰"
                         text.text = effect.customText;
                         break;
                 }

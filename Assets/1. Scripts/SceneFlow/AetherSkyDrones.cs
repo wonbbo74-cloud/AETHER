@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 /// <summary>
-/// 05 폐허된 도시 하늘에 드론을 많이, 역동적으로 띄운다(10/11 사용자 요청: 따라다니는 드론, 휙휙 날아다니는 드론, 양 늘리기).
+/// 05 폐허된 도시 하늘에 드론을 많이, 역동적으로 띄운다(따라다니는 드론, 휙휙 날아다니는 드론).
 ///
 /// - 추적조(<see cref="SkyOrbiter"/>) 4대: 플레이어 머리 위 9~15m 를 원을 그리며 돌고, 오르내리며 따라다닌다.
 /// - 비행조(<see cref="SkySwooper"/>) 10대: 도시 위 8~30m 를 빠르게(16~28m/s) 가로지르며 크게 선회하고(기울며 돈다),
@@ -18,7 +18,7 @@ public class AetherSkyDrones : MonoBehaviour
     private const int OrbiterCount = 4;
     private const int SwooperCount = 10;
     private const int AttackerCount = 2;
-    // 10/11 추가 요청: 눈높이로 지나가는 드론, 천천히 따라오는 드론, 레이저로 플레이어 주변을 훑는 드론.
+    // 눈높이로 지나가는 드론, 천천히 따라오는 드론, 레이저로 플레이어 주변을 훑는 드론.
     private const int LowFlyerCount = 4;
     private const int SlowFollowerCount = 3;
     private const int LaserCount = 3;

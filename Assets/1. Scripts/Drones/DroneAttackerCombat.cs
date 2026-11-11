@@ -121,7 +121,6 @@ public class DroneAttackerCombat : DroneCombatBase
         // 총구 화염·섬광을 띄우고, 드론을 반동으로 살짝 밀어낸다. 총알도 탄두 모양으로 바꾼다.
         AetherGunFX.ShapeBullet(bulletObj, dir);
         AetherGunFX.Flash(spawnPos, dir, 0.16f);
-        AetherShotOrigin.Mark(spawnPos, dir, name);
         AetherShotAudio.PlayBallistic(spawnPos, 0.45f);
         AetherGunFX.Kick(firePoint, dir, 0.04f, 3f);
 

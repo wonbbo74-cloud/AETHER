@@ -1,16 +1,16 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 public class CompassScroller : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] private RectTransform content; // ¿òÁ÷ÀÏ Content (TickµéÀÌ µé¾îÀÖ´Â RectTransform)
-    [SerializeField] private Transform yawSource;   // º¸Åë Main Camera (½Ã¾ß°¡ µµ´Â Transform)
+    [SerializeField] private RectTransform content; // ì›€ì§ì¼ Content (Tickë“¤ì´ ë“¤ì–´ìˆëŠ” RectTransform)
+    [SerializeField] private Transform yawSource;   // ë³´í†µ Main Camera (ì‹œì•¼ê°€ ë„ëŠ” Transform)
 
     [Header("Tuning")]
-    [Tooltip("1µµ´ç UI¿¡¼­ ¸î px ÀÌµ¿ÇÒÁö (Builder/Marker¿Í ¹İµå½Ã µ¿ÀÏ)")]
+    [Tooltip("1ë„ë‹¹ UIì—ì„œ ëª‡ px ì´ë™í• ì§€ (Builder/Markerì™€ ë°˜ë“œì‹œ ë™ì¼)")]
     [SerializeField] private float pixelsPerDegree = 8f;
 
-    private float cycleWidth; // 0~360 ÇÑ ¼¼Æ® Æø(px)
+    private float cycleWidth; // 0~360 í•œ ì„¸íŠ¸ í­(px)
 
     private void Reset()
     {
@@ -28,11 +28,11 @@ public class CompassScroller : MonoBehaviour
 
         float yaw = yawSource.eulerAngles.y; // 0~360
 
-        // yaw¸¸Å­ ¿ŞÂÊÀ¸·Î ½ºÅ©·Ñ (ÇöÀç ¹Ù¶óº¸´Â °¢µµ°¡ Áß¾Ó¿¡ ¿Àµµ·Ï)
+        // yawë§Œí¼ ì™¼ìª½ìœ¼ë¡œ ìŠ¤í¬ë¡¤ (í˜„ì¬ ë°”ë¼ë³´ëŠ” ê°ë„ê°€ ì¤‘ì•™ì— ì˜¤ë„ë¡)
         float x = -(yaw * pixelsPerDegree);
 
-        // 3¼¼Æ®(-1,0,1) Áß "°¡¿îµ¥ ¼¼Æ®(0¼¼Æ®)"¸¦ ±âÁØÀ¸·Î º¸ÀÌ°Ô ¿ÀÇÁ¼ÂÀ» ÇÑ ¼¼Æ®¸¸Å­ Àû¿ë
-        // (startCycleIndex=-1·Î ¸¸µé¾úÀ¸´Ï °¡¿îµ¥ ¼¼Æ®´Â content ³»ºÎÀÇ +cycleWidth ±¸°£)
+        // 3ì„¸íŠ¸(-1,0,1) ì¤‘ "ê°€ìš´ë° ì„¸íŠ¸(0ì„¸íŠ¸)"ë¥¼ ê¸°ì¤€ìœ¼ë¡œ ë³´ì´ê²Œ ì˜¤í”„ì…‹ì„ í•œ ì„¸íŠ¸ë§Œí¼ ì ìš©
+        // (startCycleIndex=-1ë¡œ ë§Œë“¤ì—ˆìœ¼ë‹ˆ ê°€ìš´ë° ì„¸íŠ¸ëŠ” content ë‚´ë¶€ì˜ +cycleWidth êµ¬ê°„)
         x -= cycleWidth;
 
         Vector2 pos = content.anchoredPosition;
@@ -46,56 +46,3 @@ public class CompassScroller : MonoBehaviour
         Debug.Log($"cycleWidth = {360f * pixelsPerDegree} (pixelsPerDegree={pixelsPerDegree})");
     }
 }
-
-
-/*public class CompassScroller : MonoBehaviour
-{
-    [Header("References")]
-    [SerializeField] private RectTransform content;   // ¿òÁ÷ÀÏ Content
-    [SerializeField] private Transform yawSource;      // º¸Åë Main Camera
-
-    [Header("Tuning")]
-    [Tooltip("1µµ´ç UI¿¡¼­ ¸î px ÀÌµ¿ÇÒÁö")]
-    [SerializeField] private float pixelsPerDegree = 8f;
-
-    [Tooltip("0~360 ´«±İ ÇÑ ¼¼Æ®ÀÇ ÀüÃ¼ Æø(px). º¸Åë 360 * pixelsPerDegree")]
-    [SerializeField] private float oneCycleWidth = 2880f;
-
-    [Tooltip("3È¸ ¹İº¹ Áß °¡¿îµ¥ ¼¼Æ®°¡ ±âº» À§Ä¡°¡ µÇ°Ô ÇÏ´Â ¿ÀÇÁ¼Â(px)")]
-    [SerializeField] private float centerCycleOffset = 2880f;
-
-    private void Reset()
-    {
-        // ÀÚµ¿ ´ëÀÔ µµ¿ò (°¡´ÉÇÒ ¶§¸¸)
-        if (Camera.main) yawSource = Camera.main.transform;
-    }
-
-    private void LateUpdate()
-    {
-        if (content == null || yawSource == null) return;
-
-        // 0~360
-        float yaw = yawSource.eulerAngles.y;
-
-        // yaw¸¸Å­ ¿ŞÂÊÀ¸·Î ¹Ğ¾î¾ß Áß¾Ó¿¡ ÇöÀç ¹æÇâÀÌ ¿À¹Ç·Î (-) ºÎÈ£
-        float x = -(yaw * pixelsPerDegree);
-
-        // °¡¿îµ¥ ¼¼Æ®¸¦ ±âÁØÀ¸·Î ¹èÄ¡ (²÷±è ¹æÁö)
-        x -= centerCycleOffset;
-
-        // anchoredPosition °»½Å
-        Vector2 pos = content.anchoredPosition;
-        pos.x = x;
-        content.anchoredPosition = pos;
-    }
-
-    // Inspector¿¡¼­ oneCycleWidth/centerCycleOffset ÀÚµ¿ °è»êÇÏ°í ½ÍÀ¸¸é ÀÌ°Å ¾²¸é µÊ
-    [ContextMenu("Auto Calculate Cycle Width")]
-    private void AutoCalc()
-    {
-        oneCycleWidth = 360f * pixelsPerDegree;
-        centerCycleOffset = oneCycleWidth; // °¡¿îµ¥ ¼¼Æ® ½ÃÀÛÀÌ ÇÑ ¼¼Æ®¸¸Å­ ¿À¸¥ÂÊ¿¡ ÀÖ´Ù°í °¡Á¤
-        Debug.Log($"oneCycleWidth={oneCycleWidth}, centerCycleOffset={centerCycleOffset}");
-    }
-}
-*/

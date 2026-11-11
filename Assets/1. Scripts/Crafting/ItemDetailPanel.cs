@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
@@ -30,14 +30,14 @@ public class ItemDetailPanel : MonoBehaviour
 
         gameObject.SetActive(true);
 
-        // ÇÁ¸®ºä
+        // í”„ë¦¬ë·°
         if (previewImage != null)
         {
             previewImage.texture = item.GetPreviewTexture();
             previewImage.enabled = previewImage.texture != null;
         }
 
-        // ½ºÅÈ
+        // ìŠ¤íƒ¯
         if (attackText != null)
             attackText.text = item.attack.ToString();
 
@@ -47,7 +47,7 @@ public class ItemDetailPanel : MonoBehaviour
         if (speedText != null)
             speedText.text = item.speed.ToString();
 
-        // µğÅ×ÀÏ
+        // ë””í…Œì¼
         if (detailText != null)
             detailText.text = item.description;
     }

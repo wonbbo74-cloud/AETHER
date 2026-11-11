@@ -145,7 +145,7 @@ public class ElevatorInteractionController : MonoBehaviour, IHoldInteractable
     /// <summary>
     /// 모든 씬에서 엘리베이터가 같은 크기로 보이게 하는 기준 배율.
     ///
-    /// 실측(AETHER/진단/월드 배율 측정)해 보니 씬마다 제각각이었다.
+    /// 씬마다 재 보니 제각각이었다.
     ///   06.연구소 메인 장소 : ElevatorV2 x1.50 → 높이 4.45m  (플레이어 1.55m의 2.9배)
     ///   08.1구역_2          : ElevatorV2 x5.00 → 높이 14.83m (플레이어의 9.6배)
     ///
@@ -1258,11 +1258,6 @@ public class ElevatorInteractionController : MonoBehaviour, IHoldInteractable
             return;
 
         targetCamera.cullingMask |= 1 << elevatorLayer;
-    }
-
-    private bool HasCompletedFirstBoarding()
-    {
-        return PlayerPrefs.GetInt(firstBoardingPlayerPrefsKey, 0) == 1;
     }
 
     private void MarkFirstBoardingCompleted()

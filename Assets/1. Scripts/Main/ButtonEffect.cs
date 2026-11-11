@@ -1,11 +1,11 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.UI;
 
 public class ButtonEffect : MonoBehaviour
 {
-    public Button startButton;          // ¹öÆ° ¿¬°á
-    public GameObject startEffectPrefab; // ÀÌÆåÆ® Prefab ¿¬°á
-    public Transform effectSpawnPoint;  // ÀÌÆåÆ® »ı¼º À§Ä¡ (¿¹: ¹öÆ° À§)
+    public Button startButton;          // ë²„íŠ¼ ì—°ê²°
+    public GameObject startEffectPrefab; // ì´í™íŠ¸ Prefab ì—°ê²°
+    public Transform effectSpawnPoint;  // ì´í™íŠ¸ ìƒì„± ìœ„ì¹˜ (ì˜ˆ: ë²„íŠ¼ ìœ„)
 
     void Start()
     {
@@ -19,18 +19,18 @@ public class ButtonEffect : MonoBehaviour
     {
         if (startEffectPrefab != null)
         {
-            // ÀÌÆåÆ® »ı¼º
+            // ì´í™íŠ¸ ìƒì„±
             GameObject effect = Instantiate(startEffectPrefab, effectSpawnPoint.position, Quaternion.identity);
 
-            // ÀÚµ¿ »èÁ¦ (ParticleSystem ±æÀÌ¿¡ ¸ÂÃç)
+            // ìë™ ì‚­ì œ (ParticleSystem ê¸¸ì´ì— ë§ì¶°)
             ParticleSystem ps = effect.GetComponent<ParticleSystem>();
             if (ps != null)
                 Destroy(effect, ps.main.duration);
             else
-                Destroy(effect, 2f); // ±âº» 2ÃÊ ÈÄ »èÁ¦
+                Destroy(effect, 2f); // ê¸°ë³¸ 2ì´ˆ í›„ ì‚­ì œ
         }
 
-        // ¿©±â¿¡ °ÔÀÓ ½ÃÀÛ ¾À ÀüÈ¯ ÄÚµåµµ Ãß°¡ °¡´É
-        // ¿¹: UnityEngine.SceneManagement.SceneManager.LoadScene("GameScene");
+        // ì—¬ê¸°ì— ê²Œì„ ì‹œì‘ ì”¬ ì „í™˜ ì½”ë“œë„ ì¶”ê°€ ê°€ëŠ¥
+        // ì˜ˆ: UnityEngine.SceneManagement.SceneManager.LoadScene("GameScene");
     }
 }

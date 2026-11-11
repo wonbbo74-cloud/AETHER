@@ -1,98 +1,98 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerRespawnController : MonoBehaviour
 {
-    [Header("¸®½ºÆù À§Ä¡")]
-    [SerializeField] private Transform ½ÃÀÛÀ§Ä¡±âÁØÁ¡;
-    [SerializeField] private bool ½ÃÀÛ½ÃÇöÀçÀ§Ä¡¸¦¸®½ºÆùÁöÁ¡À¸·Î»ç¿ë = true;
+    [Header("ë¦¬ìŠ¤í° ìœ„ì¹˜")]
+    [SerializeField] private Transform ì‹œì‘ìœ„ì¹˜ê¸°ì¤€ì ;
+    [SerializeField] private bool ì‹œì‘ì‹œí˜„ì¬ìœ„ì¹˜ë¥¼ë¦¬ìŠ¤í°ì§€ì ìœ¼ë¡œì‚¬ìš© = true;
 
-    [Header("¸®½ºÆù ½Ã È¸Àü ÃÊ±âÈ­")]
-    [SerializeField] private bool È¸Àüµµº¹±¸ = true;
+    [Header("ë¦¬ìŠ¤í° ì‹œ íšŒì „ ì´ˆê¸°í™”")]
+    [SerializeField] private bool íšŒì „ë„ë³µêµ¬ = true;
 
-    [Header("ÀÌµ¿ ½ºÅ©¸³Æ® ¿¬°á(¼±ÅÃ)")]
-    [SerializeField] private Move_Yunseo À±¼­ÀÌµ¿½ºÅ©¸³Æ®;
+    [Header("ì´ë™ ìŠ¤í¬ë¦½íŠ¸ ì—°ê²°(ì„ íƒ)")]
+    [SerializeField] private Move_Yunseo ìœ¤ì„œì´ë™ìŠ¤í¬ë¦½íŠ¸;
 
-    private Rigidbody ¸®Áöµå¹Ùµğ;
-    private Vector3 ÇöÀç¸®½ºÆùÀ§Ä¡;
-    private Quaternion ÇöÀç¸®½ºÆùÈ¸Àü°ª;
+    private Rigidbody ë¦¬ì§€ë“œë°”ë””;
+    private Vector3 í˜„ì¬ë¦¬ìŠ¤í°ìœ„ì¹˜;
+    private Quaternion í˜„ì¬ë¦¬ìŠ¤í°íšŒì „ê°’;
 
     private void Awake()
     {
-        ¸®Áöµå¹Ùµğ = GetComponent<Rigidbody>();
+        ë¦¬ì§€ë“œë°”ë”” = GetComponent<Rigidbody>();
 
-        if (À±¼­ÀÌµ¿½ºÅ©¸³Æ® == null)
-            À±¼­ÀÌµ¿½ºÅ©¸³Æ® = GetComponent<Move_Yunseo>();
+        if (ìœ¤ì„œì´ë™ìŠ¤í¬ë¦½íŠ¸ == null)
+            ìœ¤ì„œì´ë™ìŠ¤í¬ë¦½íŠ¸ = GetComponent<Move_Yunseo>();
 
-        if (½ÃÀÛÀ§Ä¡±âÁØÁ¡ != null)
+        if (ì‹œì‘ìœ„ì¹˜ê¸°ì¤€ì  != null)
         {
-            ÇöÀç¸®½ºÆùÀ§Ä¡ = ½ÃÀÛÀ§Ä¡±âÁØÁ¡.position;
-            ÇöÀç¸®½ºÆùÈ¸Àü°ª = ½ÃÀÛÀ§Ä¡±âÁØÁ¡.rotation;
+            í˜„ì¬ë¦¬ìŠ¤í°ìœ„ì¹˜ = ì‹œì‘ìœ„ì¹˜ê¸°ì¤€ì .position;
+            í˜„ì¬ë¦¬ìŠ¤í°íšŒì „ê°’ = ì‹œì‘ìœ„ì¹˜ê¸°ì¤€ì .rotation;
         }
-        else if (½ÃÀÛ½ÃÇöÀçÀ§Ä¡¸¦¸®½ºÆùÁöÁ¡À¸·Î»ç¿ë)
+        else if (ì‹œì‘ì‹œí˜„ì¬ìœ„ì¹˜ë¥¼ë¦¬ìŠ¤í°ì§€ì ìœ¼ë¡œì‚¬ìš©)
         {
-            ÇöÀç¸®½ºÆùÀ§Ä¡ = transform.position;
-            ÇöÀç¸®½ºÆùÈ¸Àü°ª = transform.rotation;
+            í˜„ì¬ë¦¬ìŠ¤í°ìœ„ì¹˜ = transform.position;
+            í˜„ì¬ë¦¬ìŠ¤í°íšŒì „ê°’ = transform.rotation;
         }
     }
 
-    public void ¸®½ºÆù½ÇÇà()
+    public void ë¦¬ìŠ¤í°ì‹¤í–‰()
     {
-        if (¸®Áöµå¹Ùµğ == null)
+        if (ë¦¬ì§€ë“œë°”ë”” == null)
             return;
 
-        // ¹°¸® »óÅÂ ÃÊ±âÈ­
-        ¸®Áöµå¹Ùµğ.linearVelocity = Vector3.zero;
-        ¸®Áöµå¹Ùµğ.angularVelocity = Vector3.zero;
-        ¸®Áöµå¹Ùµğ.Sleep();
+        // ë¬¼ë¦¬ ìƒíƒœ ì´ˆê¸°í™”
+        ë¦¬ì§€ë“œë°”ë””.linearVelocity = Vector3.zero;
+        ë¦¬ì§€ë“œë°”ë””.angularVelocity = Vector3.zero;
+        ë¦¬ì§€ë“œë°”ë””.Sleep();
 
-        // ÀÌµ¿ Àá±ñ ¸·¾Ò´Ù°¡ ´Ù½Ã Çã¿ë
-        if (À±¼­ÀÌµ¿½ºÅ©¸³Æ® != null)
+        // ì´ë™ ì ê¹ ë§‰ì•˜ë‹¤ê°€ ë‹¤ì‹œ í—ˆìš©
+        if (ìœ¤ì„œì´ë™ìŠ¤í¬ë¦½íŠ¸ != null)
         {
-            À±¼­ÀÌµ¿½ºÅ©¸³Æ®.SetMoveEnabled(false);
-            À±¼­ÀÌµ¿½ºÅ©¸³Æ®.SetLookEnabled(false);
+            ìœ¤ì„œì´ë™ìŠ¤í¬ë¦½íŠ¸.SetMoveEnabled(false);
+            ìœ¤ì„œì´ë™ìŠ¤í¬ë¦½íŠ¸.SetLookEnabled(false);
         }
 
-        // À§Ä¡ º¹±Í
-        transform.position = ÇöÀç¸®½ºÆùÀ§Ä¡;
+        // ìœ„ì¹˜ ë³µê·€
+        transform.position = í˜„ì¬ë¦¬ìŠ¤í°ìœ„ì¹˜;
 
-        if (È¸Àüµµº¹±¸)
-            transform.rotation = ÇöÀç¸®½ºÆùÈ¸Àü°ª;
+        if (íšŒì „ë„ë³µêµ¬)
+            transform.rotation = í˜„ì¬ë¦¬ìŠ¤í°íšŒì „ê°’;
 
-        // ¸®Áöµå¹Ùµğ À§Ä¡ µ¿±âÈ­
-        ¸®Áöµå¹Ùµğ.position = ÇöÀç¸®½ºÆùÀ§Ä¡;
+        // ë¦¬ì§€ë“œë°”ë”” ìœ„ì¹˜ ë™ê¸°í™”
+        ë¦¬ì§€ë“œë°”ë””.position = í˜„ì¬ë¦¬ìŠ¤í°ìœ„ì¹˜;
 
-        if (È¸Àüµµº¹±¸)
-            ¸®Áöµå¹Ùµğ.rotation = ÇöÀç¸®½ºÆùÈ¸Àü°ª;
+        if (íšŒì „ë„ë³µêµ¬)
+            ë¦¬ì§€ë“œë°”ë””.rotation = í˜„ì¬ë¦¬ìŠ¤í°íšŒì „ê°’;
 
         Physics.SyncTransforms();
 
-        ¸®Áöµå¹Ùµğ.WakeUp();
+        ë¦¬ì§€ë“œë°”ë””.WakeUp();
 
-        if (À±¼­ÀÌµ¿½ºÅ©¸³Æ® != null)
+        if (ìœ¤ì„œì´ë™ìŠ¤í¬ë¦½íŠ¸ != null)
         {
-            À±¼­ÀÌµ¿½ºÅ©¸³Æ®.SetMoveEnabled(true);
-            À±¼­ÀÌµ¿½ºÅ©¸³Æ®.SetLookEnabled(true);
+            ìœ¤ì„œì´ë™ìŠ¤í¬ë¦½íŠ¸.SetMoveEnabled(true);
+            ìœ¤ì„œì´ë™ìŠ¤í¬ë¦½íŠ¸.SetLookEnabled(true);
         }
     }
 
-    public void ¸®½ºÆùÁöÁ¡º¯°æ(Transform »õ±âÁØÁ¡)
+    public void ë¦¬ìŠ¤í°ì§€ì ë³€ê²½(Transform ìƒˆê¸°ì¤€ì )
     {
-        if (»õ±âÁØÁ¡ == null)
+        if (ìƒˆê¸°ì¤€ì  == null)
             return;
 
-        ÇöÀç¸®½ºÆùÀ§Ä¡ = »õ±âÁØÁ¡.position;
-        ÇöÀç¸®½ºÆùÈ¸Àü°ª = »õ±âÁØÁ¡.rotation;
+        í˜„ì¬ë¦¬ìŠ¤í°ìœ„ì¹˜ = ìƒˆê¸°ì¤€ì .position;
+        í˜„ì¬ë¦¬ìŠ¤í°íšŒì „ê°’ = ìƒˆê¸°ì¤€ì .rotation;
     }
 
-    public void ¸®½ºÆùÁöÁ¡º¯°æ(Vector3 »õÀ§Ä¡, Quaternion »õÈ¸Àü)
+    public void ë¦¬ìŠ¤í°ì§€ì ë³€ê²½(Vector3 ìƒˆìœ„ì¹˜, Quaternion ìƒˆíšŒì „)
     {
-        ÇöÀç¸®½ºÆùÀ§Ä¡ = »õÀ§Ä¡;
-        ÇöÀç¸®½ºÆùÈ¸Àü°ª = »õÈ¸Àü;
+        í˜„ì¬ë¦¬ìŠ¤í°ìœ„ì¹˜ = ìƒˆìœ„ì¹˜;
+        í˜„ì¬ë¦¬ìŠ¤í°íšŒì „ê°’ = ìƒˆíšŒì „;
     }
 
-    public Vector3 ÇöÀç¸®½ºÆùÀ§Ä¡°¡Á®¿À±â()
+    public Vector3 í˜„ì¬ë¦¬ìŠ¤í°ìœ„ì¹˜ê°€ì ¸ì˜¤ê¸°()
     {
-        return ÇöÀç¸®½ºÆùÀ§Ä¡;
+        return í˜„ì¬ë¦¬ìŠ¤í°ìœ„ì¹˜;
     }
 }

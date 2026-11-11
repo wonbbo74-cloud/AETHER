@@ -298,7 +298,7 @@ namespace CircuitPuzzle
 
             // Board area: under the top panels, between the 송신 and 수신 panels, down to the bottom edge.
             // 첫 배치는 CanvasScaler 가 크기를 바꾸기 전에 일어나 canvasRect.rect 가 화면 픽셀 크기였다.
-            // 1080p 근처에선 티가 안 났지만 2560x1600 같은 큰 화면에선 상자가 왼쪽 아래로 밀려 화면 밖까지 나갔다(10/12 exe).
+            // 1080p 근처에선 티가 안 났지만 2560x1600 같은 큰 화면에선 상자가 왼쪽 아래로 밀려 화면 밖까지 나갔다.
             // 스케일러(1920x1080 Expand)가 만들 크기를 직접 계산해 쓴다.
             float expand = Mathf.Min(Screen.width / 1920f, Screen.height / 1080f);
             Vector2 areaSize = expand > 0f ? new Vector2(Screen.width, Screen.height) / expand : canvasRect.rect.size;
@@ -426,7 +426,7 @@ namespace CircuitPuzzle
         }
 
         // 송신/수신 연결점은 화면 가장자리에 붙은 패널을 따라가야 한다. 처음 배치 때는 화면 크기 맞춤(CanvasScaler)이
-        // 아직 안 돼 패널 자리가 달랐고, 그 뒤 패널만 옮겨 가 연결점이 화면 밖에 남았다(10/12 exe). 매 프레임 다시 맞춘다.
+        // 아직 안 돼 패널 자리가 달랐고, 그 뒤 패널만 옮겨 가 연결점이 화면 밖에 남았다. 매 프레임 다시 맞춘다.
         readonly List<(CP_Gate_Final gate, RectTransform group, Vector2 center)> terminals = new List<(CP_Gate_Final, RectTransform, Vector2)>();
 
         void PlaceTerminal(CP_Gate_Final gate, RectTransform panelGroup, Vector2 panelCenter)

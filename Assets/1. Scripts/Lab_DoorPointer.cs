@@ -52,7 +52,7 @@ public class Lab_DoorPointer : MonoBehaviour
         if (door.IsNeutralized) return;
         if (!door.IsCurrentPointer(this)) return;
 
-        // 한 발에 바로 다음 표적으로 넘어가 너무 쉬웠다(사용자 요청). 표적마다 여러 번 맞혀야 넘어간다.
+        // 한 발에 바로 다음 표적으로 넘어가 너무 쉬웠다. 표적마다 여러 번 맞혀야 넘어간다.
         hitsTaken += Time.frameCount == lastHitFrame ? 0 : 1;
         lastHitFrame = Time.frameCount;
         AetherAudio.PlayAt("target_hit", transform.position, 0.6f, 2f, 40f, 0.05f, 0.8f + 0.1f * hitsTaken);

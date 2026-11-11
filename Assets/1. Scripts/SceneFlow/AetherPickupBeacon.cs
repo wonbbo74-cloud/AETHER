@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 /// 04 의 물병처럼 바닥에 놓인 작은 물체는 눈에 잘 띄지 않아 지나치기 쉬웠다.
 /// 씬에 놓인 것뿐 아니라 나중에 생기는 것(연구소 보급품, 버린 물건)도 1초마다 찾아 붙인다.
 ///
-/// 05 모듈도 같은 표식으로 맞춘다(사용자 요청: "벙커 아이템처럼"). 모듈은 원래 작은 표식이 2m 위에 떠 있어 잘 안 보였고,
+/// 05 모듈도 같은 표식으로 벙커 아이템처럼 맞춘다. 모듈은 원래 작은 표식이 2m 위에 떠 있어 잘 안 보였고,
 /// 작은 열쇠·케이블은 땅속에 완전히 묻혀(맨 위가 지면보다 낮음) 아예 보이지 않았다. 처음 한 번 바닥 위로 올린다.
 /// </summary>
 public class AetherPickupBeacon : MonoBehaviour
@@ -17,7 +17,7 @@ public class AetherPickupBeacon : MonoBehaviour
     private const float VisibleDistance = 16f;
 
     // 0.28 은 10m 밖에서 작은 점으로만 보였다(화면 확인). 모듈은 찾으러 다니는 물건이라 크게.
-    private static readonly Vector2 ModuleSize = new Vector2(0.9f, 0.9f);   // 10/11 사용자 요청으로 0.55 → 0.9
+    private static readonly Vector2 ModuleSize = new Vector2(0.9f, 0.9f);   // 0.55 → 0.9 로 키움
     private const float ModuleVisibleDistance = 22f;
     private const float ModuleMarkerGap = 0.45f;
 

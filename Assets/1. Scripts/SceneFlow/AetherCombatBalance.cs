@@ -16,7 +16,7 @@ public static class AetherCombatBalance
 
     /// <summary>
     /// 갈증이 초당 줄어드는 양. 프리팹에 저장된 값(0.2) 대신 이 값을 쓴다.
-    /// 0.2 일 때는 05 중간쯤 갈증이 0 이 되어 체력 자연회복이 멈췄고, 물 3병으로는 모자랐다(10/11 Meka 플레이).
+    /// 0.2 일 때는 05 중간쯤 갈증이 0 이 되어 체력 자연회복이 멈췄고, 물 3병으로는 모자랐다(Meka 플레이 기준).
     /// 0.1 이면 가득 찬 갈증이 약 17분 간다. 물 한 병(+40, Water.asset)은 약 7분.
     /// </summary>
     public const float ThirstDrainPerSecond = 0.1f;
@@ -40,10 +40,10 @@ public static class AetherCombatBalance
     /// <summary>
     /// 플레이어가 적에게서 받는 피해 전체에 한 번 더 곱하는 배율(총알·드론 자폭).
     ///
-    /// 2026-10-08 사용자 "다른 적들의 공격이 너무 세다". 적마다 다른 경로(총알·자폭·근접)로
+    /// 적의 공격이 너무 셌다. 적마다 다른 경로(총알·자폭·근접)로
     /// 들어오는 피해를 한곳(PlayerStatus)에서 함께 줄인다. 독가스·화염 같은 지형 피해는 그대로.
     /// </summary>
-    /// 2026-10-12 사용자 "HP 가 너무 안 닳는다" → 0.6 에서 1.0 으로(체감 약 1.7배), 같은 날 한 번 더 1.3배 → 1.3.
+    /// 그 뒤 HP 가 너무 안 닳아 0.6 에서 1.0 으로(체감 약 1.7배), 다시 1.3배 → 1.3.
     public const float IncomingEnemyDamageScale = 5.2f;   // 10/12: 1.3 의 2배(2.6), 10/13: 또 2배
 
     public static float ScaleIncomingEnemyDamage(float damage) => damage * IncomingEnemyDamageScale * AetherLevel.IncomingDamageScale * AetherEncounterDirector.DamageScale;
@@ -53,7 +53,7 @@ public static class AetherCombatBalance
     ///
     /// 씬에 34m 로 저장되어 있어서, 잔해에 묻혀 보이지도 않는 터렛이 총알만 보내 왔다.
     /// 쏘는 쪽이 눈에 보이는 거리까지 당긴다.
-    /// 10/11 사용자 요청으로 22m → 40m(더 멀리 있는 플레이어도 쏜다). 가려진 터렛은 HasClearShot 이 막는다.
+    /// 22m → 40m(더 멀리 있는 플레이어도 쏜다). 가려진 터렛은 HasClearShot 이 막는다.
     /// 씬 저장값(34m)보다 커야 하므로 EnemyTurretController 는 이 값을 그대로 쓴다.
     /// </summary>
     public const float TurretDetectionRange = 40f;

@@ -1,8 +1,8 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 public class RotateCircle : MonoBehaviour
 {
-    public float rotationSpeed = 180f;  // ÃÊ´ç È¸Àü °¢µµ
+    public float rotationSpeed = 180f;  // ì´ˆë‹¹ íšŒì „ ê°ë„
 
     private RectTransform rect;
 

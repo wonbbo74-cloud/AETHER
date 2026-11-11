@@ -5,8 +5,8 @@ using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 /// <summary>
-/// 퍼즐3(숫자 해독) 화면 = 번호키 도어락(사용자가 준 doorlock_ui_pack, Resources/UI/DoorlockPack).
-/// 게임 규칙·판정은 사용자 매니저(CodebreakerGameManager_Final)가 그대로 맡고, 이 화면은 보여 주기·입력만 한다.
+/// 퍼즐3(숫자 해독) 화면 = 번호키 도어락(doorlock_ui_pack, Resources/UI/DoorlockPack).
+/// 게임 규칙·판정은 기존 매니저(CodebreakerGameManager_Final)가 그대로 맡고, 이 화면은 보여 주기·입력만 한다.
 ///
 /// - 배경 = 팩의 빈 화면(도어락 본체 + 시도 기록 패널). 그림에 박힌 예시 값(0 / 6, 02:00, 커서)은 같은 색 조각으로 덮고 실제 값을 쓴다.
 /// - LCD 4칸: 빈 칸은 그림의 7세그 잔상, 입력한 칸은 앰버 숫자, 다음 칸에 커서 막대.

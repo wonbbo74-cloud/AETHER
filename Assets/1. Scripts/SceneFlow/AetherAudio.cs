@@ -451,7 +451,7 @@ public static class AetherSurface
     public static string Classify(Collider col)
     {
         string fallback = SceneDefault();
-        // 07 제작실은 바닥 재질 이름(panel·scifi)이 철판으로 읽혀 금속 발소리가 났는데, 울리는 소리가 '딩동'처럼 들렸다(사용자 지적).
+        // 07 제작실은 바닥 재질 이름(panel·scifi)이 철판으로 읽혀 금속 발소리가 났는데, 울리는 소리가 '딩동'처럼 들렸다.
         // 07 은 바닥과 상관없이 일반 발소리를 쓴다.
         if (SceneManager.GetActiveScene().name.StartsWith("07.")) return "concrete";
         if (col == null) return fallback;
@@ -588,7 +588,7 @@ public class AetherFootsteps : MonoBehaviour
 
         bool crouch = capsule != null && capsule.height < standHeight * 0.8f;
         float stride, vol;
-        if (crouch) { stride = 0.55f; vol = 0.32f; }   // 10/11 사용자 요청: 발소리 전체 1.6배
+        if (crouch) { stride = 0.55f; vol = 0.32f; }   // 발소리 전체 1.6배
         else if (speed < 3.4f) { stride = 0.78f; vol = 0.6f; } // 실측: 05 배경음 속에서 묻혀 0.30 → 0.38
         else { stride = 1.15f; vol = 0.9f; }
 

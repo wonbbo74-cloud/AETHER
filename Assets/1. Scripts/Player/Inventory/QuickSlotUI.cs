@@ -1,18 +1,18 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using TMPro;
 
 public class QuickSlotUI : MonoBehaviour, IDropHandler
 {
-    [Header("Äü½½·Ô ÀÎµ¦½º (0~4)")]
+    [Header("í€µìŠ¬ë¡¯ ì¸ë±ìŠ¤ (0~4)")]
     public int quickSlotIndex;
 
-    [Header("UI ÂüÁ¶")]
+    [Header("UI ì°¸ì¡°")]
     public Image iconImage;
     public TextMeshProUGUI countText;
 
-    // ¿ÜºÎ¿¡¼­ ÁÖÀÔ
+    // ì™¸ë¶€ì—ì„œ ì£¼ì…
     private QuickSlotManager manager;
 
     private void Awake()
@@ -20,7 +20,7 @@ public class QuickSlotUI : MonoBehaviour, IDropHandler
         SetEmpty();
     }
 
-    // PlayerUIManager°¡ ¿¬°áÇØÁÜ
+    // PlayerUIManagerê°€ ì—°ê²°í•´ì¤Œ
     public void Bind(QuickSlotManager m)
     {
         manager = m;

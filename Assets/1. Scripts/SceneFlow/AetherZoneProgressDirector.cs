@@ -4,12 +4,9 @@ using UnityEngine.SceneManagement;
 /// <summary>
 /// 구역 클리어를 판정해서 엘리베이터의 다음 층 버튼을 열어준다.
 ///
-/// ElevatorZoneProgress(잠금 해제 판정)와 ElevatorZoneClearMarker(클리어 기록)는 이미 있었지만,
-/// 마커가 어느 씬에도 배치되어 있지 않아서 <b>1구역을 아무리 깨도 클리어가 기록되지 않았다.</b>
-/// 그래서 2·3구역 버튼이 영원히 잠긴 상태였다.
+/// ElevatorZoneProgress(잠금 해제 판정)에 클리어를 기록해 2·3구역 버튼이 차례로 열리게 한다.
 ///
-/// 여기서는 "그 구역의 적을 모두 처치하면 클리어"로 판정한다.
-/// 씬에 ElevatorZoneClearMarker를 직접 놓아 두었다면 그쪽도 그대로 동작한다.
+/// 판정 기준은 "그 구역의 적을 모두 처치하면 클리어"이다.
 /// </summary>
 public class AetherZoneProgressDirector : MonoBehaviour
 {

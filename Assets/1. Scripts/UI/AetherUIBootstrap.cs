@@ -625,7 +625,7 @@ public class AetherUIBootstrap : MonoBehaviour
 
             Color color = pickupToast.color;
             color.a = Mathf.Clamp01(toastTimer / 0.6f);
-            // 알림이 장면 전환용 최상단 캔버스에 붙어 인벤토리·제작 화면 칸 위에 "+ 식량" 이 겹쳐 보였다(10/12 최종 점검).
+            // 알림이 장면 전환용 최상단 캔버스에 붙어 인벤토리·제작 화면 칸 위에 "+ 식량" 이 겹쳐 보였다.
             if (AetherUIState.AnyScreenOpen)
                 color.a = 0f;
             pickupToast.color = color;

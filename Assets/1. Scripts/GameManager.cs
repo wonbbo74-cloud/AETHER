@@ -1,7 +1,7 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public PlayerStatus playerStatus;       // °øÅëÀ¸·Î ¾µ ÂüÁ¶
-    public PlayerInventory playerInventory; // ÇÊ¿ä ½Ã ÇÒ´ç
+    public PlayerStatus playerStatus;       // ê³µí†µìœ¼ë¡œ ì“¸ ì°¸ì¡°
+    public PlayerInventory playerInventory; // í•„ìš” ì‹œ í• ë‹¹
 }

@@ -1,31 +1,31 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class ElevatorController : MonoBehaviour
 {
-    [Header("¹® ¾Ö´Ï¸ŞÀÌ¼Ç")]
+    [Header("ë¬¸ ì• ë‹ˆë©”ì´ì…˜")]
     public Animation doorAnimation;
     public string openAnimation = "OpenDoors";
     public string closeAnimation = "CloseDoors";
 
-    [Header("¾À ÀÌµ¿")]
+    [Header("ì”¬ ì´ë™")]
     public string nextSceneName = "Stage02";
 
-    [Header("Å¸ÀÌ¹Ö")]
-    [Tooltip("¹® ´İÈû ÈÄ Ãß°¡ ´ë±â ½Ã°£")]
+    [Header("íƒ€ì´ë°")]
+    [Tooltip("ë¬¸ ë‹«í˜ í›„ ì¶”ê°€ ëŒ€ê¸° ì‹œê°„")]
     public float extraCloseDelay = 0.1f;
 
-    [Tooltip("¿¤¸®º£ÀÌÅÍ ÀÌµ¿ ¿¬Ãâ ½Ã°£")]
+    [Tooltip("ì—˜ë¦¬ë² ì´í„° ì´ë™ ì—°ì¶œ ì‹œê°„")]
     public float travelTime = 2.5f;
 
-    [Header("»ç¿îµå")]
+    [Header("ì‚¬ìš´ë“œ")]
     public AudioSource audioSource;
     public AudioClip doorOpenClip;
     public AudioClip doorCloseClip;
     public AudioClip elevatorMoveClip;
 
-    [Header("Ä«¸Ş¶ó Èçµé¸²")]
+    [Header("ì¹´ë©”ë¼ í”ë“¤ë¦¼")]
     public Transform playerCamera;
     public float shakeAmount = 0.02f;
 
@@ -87,18 +87,18 @@ public class ElevatorController : MonoBehaviour
         isMoving = true;
         isOpen = false;
 
-        // 1. ¹® ´İ±â
+        // 1. ë¬¸ ë‹«ê¸°
         if (doorAnimation != null)
             doorAnimation.Play(closeAnimation);
 
         if (audioSource != null && doorCloseClip != null)
             audioSource.PlayOneShot(doorCloseClip);
 
-        // 2. ¹® ´İÈû ¾Ö´Ï¸ŞÀÌ¼Ç ³¡³¯ ¶§±îÁö ´ë±â
+        // 2. ë¬¸ ë‹«í˜ ì• ë‹ˆë©”ì´ì…˜ ëë‚  ë•Œê¹Œì§€ ëŒ€ê¸°
         float closeAnimLength = GetAnimationLength(closeAnimation);
         yield return new WaitForSeconds(closeAnimLength + extraCloseDelay);
 
-        // 3. ÀÌµ¿ »ç¿îµå Àç»ı
+        // 3. ì´ë™ ì‚¬ìš´ë“œ ì¬ìƒ
         if (audioSource != null && elevatorMoveClip != null)
         {
             audioSource.clip = elevatorMoveClip;
@@ -106,17 +106,17 @@ public class ElevatorController : MonoBehaviour
             audioSource.Play();
         }
 
-        // 4. ¾À ÀüÈ¯ Á÷Àü±îÁö °è¼Ó Èçµé±â
+        // 4. ì”¬ ì „í™˜ ì§ì „ê¹Œì§€ ê³„ì† í”ë“¤ê¸°
         if (playerCamera != null)
             yield return StartCoroutine(ShakeCameraForDuration(travelTime));
         else
             yield return new WaitForSeconds(travelTime);
 
-        // 5. ´ÙÀ½ ¾À ÀÌµ¿
+        // 5. ë‹¤ìŒ ì”¬ ì´ë™
         if (!string.IsNullOrEmpty(nextSceneName))
             SceneManager.LoadScene(nextSceneName);
         else
-            Debug.LogError("[ElevatorController] nextSceneNameÀÌ ºñ¾î ÀÖ½À´Ï´Ù.");
+            Debug.LogError("[ElevatorController] nextSceneNameì´ ë¹„ì–´ ìˆìŠµë‹ˆë‹¤.");
     }
 
     private float GetAnimationLength(string clipName)

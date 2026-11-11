@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 /// <summary>
-/// 두 캐릭터의 겉모습이 뒤바뀌어 있었다(10/12 사용자 확인).
+/// 두 캐릭터의 겉모습이 뒤바뀌어 있었다.
 ///  - Shiri(Move_Yunseo, 주먹) 프리팹에는 헬멧 쓴 남자 몸(SK_PP801C)이,
 ///  - Meka(Move_Hankyul, 총) 프리팹에는 크롭탑 여자 몸(SK_LP287C)이 붙어 있었다.
 /// 캐릭터 선택 그림·시네마틱은 Shiri = 여자, Meka = 헬멧 남자다.
@@ -120,14 +120,14 @@ public class AetherBodySkin : MonoBehaviour
                 smr.SetBlendShapeWeight(i, src.GetBlendShapeWeight(i));
 
             bool hands = IsViewModelPath(path);
-            // Shiri 1인칭: 팔만 떼어 보이면 어디선가 잘린 단면이 보였다(10/12 사용자 "어디라도 잘려 있는 느낌이 없게").
+            // Shiri 1인칭: 팔만 떼어 보이면 어디선가 잘린 단면이 보였다.
             // 상체(어깨·팔·상의)를 통째로 1인칭에 보이게 하고 머리·머리카락만 숨긴다. 이음매는 목, 즉 카메라 자리라 안 보인다.
             if (false && !hands && playerRoot.GetComponent<Move_Yunseo>() != null && path.ToLowerInvariant().Contains("upper"))   // 상체 통째: 앉으면 상의가 화면을 가려 쓰지 않음
                 hands = true;
             int layer = hands ? viewLayer : bodyLayer;
             if (layer >= 0) go.layer = layer;
 
-            // Shiri 1인칭: 손만 보이면 손목에서 잘려 보였다(10/12 사용자). 몸통 피부에서 팔 부분만 떼어 1인칭에 보이게 한다.
+            // Shiri 1인칭: 손만 보이면 손목에서 잘려 보였다. 몸통 피부에서 팔 부분만 떼어 1인칭에 보이게 한다.
             if (!hands && viewLayer >= 0 && playerRoot.GetComponent<Move_Yunseo>() != null && path.ToLowerInvariant().Contains("upperskin"))   // 맨살 팔만(어깨~손). 상의·몸통은 1인칭에 안 보임
             {
                 Mesh arms = ArmsOnly(src.sharedMesh, src.bones);
@@ -269,14 +269,14 @@ public class AetherBodySkin : MonoBehaviour
 
 /// <summary>
 /// Shiri 1인칭 주먹. 펀치 애니메이션은 3인칭용이라 주먹이 카메라 아래·뒤에 머물러 화면에 한 번도 안 보였다
-/// (10/12 사용자: "맨손전투가 시선에서 안 보여"). 카메라를 눈 위치로 옮기고, 애니메이션이 끝난 뒤 양쪽 어깨(쇄골)를
+/// 맨손 전투가 시선에 보이도록 카메라를 눈 위치로 옮기고, 애니메이션이 끝난 뒤 양쪽 어깨(쇄골)를
 /// 카메라 기준 위·앞으로 조금 옮겨 주먹이 화면 아래쪽에 보이게 한다. 몸은 자기 카메라에 안 보이므로(Player 레이어)
 /// 손·장갑만 보인다.
 /// </summary>
 [DefaultExecutionOrder(10000)]
 public class AetherShiriFirstPersonArms : MonoBehaviour
 {
-    // 1인칭 팔 보정. 예전엔 쇄골을 '위치'로 끌어올려 어깨 피부가 늘어나고 팔이 꺾여 보였다(10/12 사용자).
+    // 1인칭 팔 보정. 예전엔 쇄골을 '위치'로 끌어올려 어깨 피부가 늘어나고 팔이 꺾여 보였다.
     // 이제는 위팔을 어깨 관절에서 '회전'만 시켜 팔을 앞으로 든다(실제 팔이 움직이는 방식이라 모양이 안 깨진다).
     public static readonly Vector3 EyeLocal = new Vector3(0f, 1.66f, -0.02f);
     public static float RaiseDegrees = 30f;   // 위팔을 카메라 기준 위로 드는 각도
@@ -307,7 +307,7 @@ public class AetherShiriFirstPersonArms : MonoBehaviour
 
     // 1인칭에 보이는 손·팔은 몸 뼈대를 그대로 쓰지 않고 '복사 뼈대'를 쓴다. 매 프레임 몸 뼈의 자세를 복사한 뒤
     // 눈을 중심으로 시선의 위아래 각도만큼 통째로 돌린다(총 게임의 1인칭 팔). 그래서 아래를 봐도 팔 모양·화면 속 위치가
-    // 정면을 볼 때와 똑같고, 위팔 끝(잘린 자리)이 화면 안으로 들어오지 않는다(10/12 사용자 "어디라도 잘려 있는 느낌이 없게").
+    // 정면을 볼 때와 똑같고, 위팔 끝(잘린 자리)이 화면 안으로 들어오지 않는다.
     private Transform rig;
     private Transform[] srcBones = new Transform[0], fpBones = new Transform[0];
 
@@ -364,7 +364,7 @@ public class AetherShiriFirstPersonArms : MonoBehaviour
         bool airborne = move != null && !move.IsGroundedNow;
         if (airborne) airTime += Time.deltaTime; else airTime = 0f;
         // 싸울 때(펀치 후 3초간 InBattle)만 팔을 보인다. 그냥 걷고 뛰고 앉을 때는 걷기 애니메이션의 팔 흔들림이
-        // 화면 가장자리에서 손만 불쑥 들어와 팔이 이상하게 모여 보였다(10/12 사용자).
+        // 화면 가장자리에서 손만 불쑥 들어와 팔이 이상하게 모여 보였다.
         if (animator == null)
         {
             animator = GetComponentInChildren<Animator>();

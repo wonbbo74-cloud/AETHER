@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 /// <summary>
-/// 팀이 만든 시네마틱 3편(Cinemachine 3 + Timeline, "0. Scenes/Cinematic")을 진행 사이에 끼운다(10/12 사용자 요청).
+/// 팀이 만든 시네마틱 3편(Cinemachine 3 + Timeline, "0. Scenes/Cinematic")을 진행 사이에 끼운다.
 ///
 ///  1. Cine_01_벙커대화  — 로비에서 새 게임(혼자 하기) → 시네마틱 → 02 플레이어 선택
 ///  2. Cine_02_로봇앞     — 04 벙커 출구 → 시네마틱 → 05 폐허된 도시
@@ -72,7 +72,7 @@ public class AetherCinematics : MonoBehaviour
         HandleSceneLoaded(SceneManager.GetActiveScene(), LoadSceneMode.Single);
     }
 
-    // 시네마틱이 끝나고 넘어간 장면: 검은 화면을 잠깐 유지했다가 천천히 밝히고, 도착 직후엔 무적(10/12 사용자 요청).
+    // 시네마틱이 끝나고 넘어간 장면: 검은 화면을 잠깐 유지했다가 천천히 밝히고, 도착 직후엔 무적.
     // 05 는 도착하자마자 총격이 시작돼 시네마틱에서 막 넘어온 플레이어가 15초에 HP 의 절반을 잃었다.
     private const float ArrivalHoldBlack = 0.6f;
     private const float ArrivalFadeIn = 1.6f;

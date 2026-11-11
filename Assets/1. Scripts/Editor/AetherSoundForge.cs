@@ -482,7 +482,7 @@ public static class AetherSoundForge
         return o;
     }
 
-    // Shiri 잽 타격음 '퍽'(10/12 사용자 "좀 더 퍽퍽 소리"): 금속 울림 없이 낮게 떨어지는 몸통 쿵 + 둔탁한 살 때리는 소리.
+    // Shiri 잽 타격음 '퍽': 금속 울림 없이 낮게 떨어지는 몸통 쿵 + 둔탁한 살 때리는 소리.
     [MenuItem("AETHER/사운드/쉬리 타격음(퍽)만 만들기")]
     public static void MakePunchThud()
     {
@@ -499,7 +499,7 @@ public static class AetherSoundForge
         AddSweep(o, 0f, Rf(r, 95f, 115f), 42f, 0.09f, 0.07f, 1f);                            // 몸통에 들어가는 쿵
         AddNoiseBurst(o, r, 0f, 0.055f, LP(Rf(r, 700f, 900f), 0.7f), 1f, Shape.Decay, pink: true);   // 퍽
         AddNoiseBurst(o, r, 0f, 0.012f, BP(Rf(r, 1100f, 1500f), 0.8f), 0.45f, Shape.Decay);   // 맞닿는 순간의 탁
-        // 더 크게 들리도록(10/13 사용자 "훨씬 크게") 부드럽게 눌러 꽉 채운다: 최대치는 같아도 체감 음량이 커진다.
+        // 더 크게 들리도록 부드럽게 눌러 꽉 채운다: 최대치는 같아도 체감 음량이 커진다.
         float peak = 1e-6f;
         foreach (float s in o) peak = Mathf.Max(peak, Mathf.Abs(s));
         const float drive = 4f;

@@ -1,12 +1,12 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using System.Collections.Generic;
 
 public class CraftInventoryController : MonoBehaviour
 {
-    [Header("All Item ½½·Ôµé")]
+    [Header("All Item ìŠ¬ë¡¯ë“¤")]
     public List<InventorySlot> allItemSlots = new List<InventorySlot>();
 
-    [Header("¸ğµç ¾ÆÀÌÅÛ µ¥ÀÌÅÍ")]
+    [Header("ëª¨ë“  ì•„ì´í…œ ë°ì´í„°")]
     public List<CraftItemDataSO> allItems = new List<CraftItemDataSO>();
 
     void Start()
@@ -16,13 +16,13 @@ public class CraftInventoryController : MonoBehaviour
 
     void PopulateAllItems()
     {
-        // ½½·Ô ÃÊ±âÈ­
+        // ìŠ¬ë¡¯ ì´ˆê¸°í™”
         foreach (var slot in allItemSlots)
         {
             slot.Clear();
         }
 
-        // ¾ÆÀÌÅÛÀ» ½½·Ô¿¡ ¼ø¼­´ë·Î ¹èÄ¡
+        // ì•„ì´í…œì„ ìŠ¬ë¡¯ì— ìˆœì„œëŒ€ë¡œ ë°°ì¹˜
         for (int i = 0; i < allItems.Count; i++)
         {
             if (i >= allItemSlots.Count)

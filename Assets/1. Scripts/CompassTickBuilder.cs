@@ -1,4 +1,4 @@
-using TMPro;
+ï»¿using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,32 +8,32 @@ public class CompassTickBuilder : MonoBehaviour
     [SerializeField] private RectTransform content;
 
     [Header("Prefabs")]
-    [SerializeField] private RectTransform tickLinePrefab;   // UI Image(¼±) ÇÁ¸®ÆÕÀÇ RectTransform
-    [SerializeField] private TextMeshProUGUI labelPrefab;    // TMP ¶óº§ ÇÁ¸®ÆÕ
+    [SerializeField] private RectTransform tickLinePrefab;   // UI Image(ì„ ) í”„ë¦¬íŒ¹ì˜ RectTransform
+    [SerializeField] private TextMeshProUGUI labelPrefab;    // TMP ë¼ë²¨ í”„ë¦¬íŒ¹
 
     [Header("Layout (px)")]
-    [Tooltip("1µµ´ç UI¿¡¼­ ¸î px·Î Ç¥ÇöÇÒÁö (Scroller/Marker¿Í ¹Ýµå½Ã µ¿ÀÏ)")]
+    [Tooltip("1ë„ë‹¹ UIì—ì„œ ëª‡ pxë¡œ í‘œí˜„í• ì§€ (Scroller/Markerì™€ ë°˜ë“œì‹œ ë™ì¼)")]
     [SerializeField] private float pixelsPerDegree = 8f;
 
-    [Tooltip("´«±Ý °£°Ý(µµ). 5µµ ÃßÃµ")]
+    [Tooltip("ëˆˆê¸ˆ ê°„ê²©(ë„). 5ë„ ì¶”ì²œ")]
     [SerializeField] private int stepDegree = 5;
 
-    [Tooltip("¼ýÀÚ/¹æÇâ ¶óº§ °£°Ý(µµ). 15µµ ÃßÃµ")]
+    [Tooltip("ìˆ«ìž/ë°©í–¥ ë¼ë²¨ ê°„ê²©(ë„). 15ë„ ì¶”ì²œ")]
     [SerializeField] private int numberLabelStep = 15;
 
-    [Tooltip("¶óÀÎÀÌ ¹èÄ¡µÉ Y")]
+    [Tooltip("ë¼ì¸ì´ ë°°ì¹˜ë  Y")]
     [SerializeField] private float yLine = 12f;
 
-    [Tooltip("¶óº§ÀÌ ¹èÄ¡µÉ Y")]
+    [Tooltip("ë¼ë²¨ì´ ë°°ì¹˜ë  Y")]
     [SerializeField] private float yLabel = -18f;
 
     [Header("Tick Heights (px)")]
-    [SerializeField] private float majorTickHeight = 18f; // 15µµ ´ÜÀ§(¶óº§ ÀÖ´Â) Å« ´«±Ý
-    [SerializeField] private float minorTickHeight = 10f; // ±× ¿Ü ÀÛÀº ´«±Ý
-    [SerializeField] private float tickWidth = 2f;        // ¼± µÎ²²
+    [SerializeField] private float majorTickHeight = 18f; // 15ë„ ë‹¨ìœ„(ë¼ë²¨ ìžˆëŠ”) í° ëˆˆê¸ˆ
+    [SerializeField] private float minorTickHeight = 10f; // ê·¸ ì™¸ ìž‘ì€ ëˆˆê¸ˆ
+    [SerializeField] private float tickWidth = 2f;        // ì„  ë‘ê»˜
 
     [Header("Repeat")]
-    [SerializeField] private int repeatCount = 3;     // -1,0,1 = 3¼¼Æ®
+    [SerializeField] private int repeatCount = 3;     // -1,0,1 = 3ì„¸íŠ¸
     [SerializeField] private int startCycleIndex = -1;
 
     [ContextMenu("Build Compass Ticks")]
@@ -53,7 +53,7 @@ public class CompassTickBuilder : MonoBehaviour
             return;
         }
 
-        // 1) ±âÁ¸ ÀÚ½Ä Á¦°Å (Áß¿ä)
+        // 1) ê¸°ì¡´ ìžì‹ ì œê±° (ì¤‘ìš”)
         for (int i = content.childCount - 1; i >= 0; i--)
         {
             DestroyImmediate(content.GetChild(i).gameObject);
@@ -61,11 +61,11 @@ public class CompassTickBuilder : MonoBehaviour
 
         float cycleWidth = 360f * pixelsPerDegree;
 
-        // 2) ¼¼Æ® ¹Ýº¹(-1,0,1)
+        // 2) ì„¸íŠ¸ ë°˜ë³µ(-1,0,1)
         for (int r = 0; r < repeatCount; r++)
         {
             int cycleIndex = startCycleIndex + r;         // -1,0,1
-            float cycleOffsetX = cycleIndex * cycleWidth; // ¼¼Æ® ½ÃÀÛ ¿ÀÇÁ¼Â
+            float cycleOffsetX = cycleIndex * cycleWidth; // ì„¸íŠ¸ ì‹œìž‘ ì˜¤í”„ì…‹
 
             for (int deg = 0; deg < 360; deg += stepDegree)
             {
@@ -73,23 +73,23 @@ public class CompassTickBuilder : MonoBehaviour
 
                 bool isMajor = (deg % numberLabelStep == 0);
 
-                // --- Tick Line »ý¼º ---
+                // --- Tick Line ìƒì„± ---
                 RectTransform line = Instantiate(tickLinePrefab, content);
 
-                // ÇÁ¸®ÆÕ ¼³Á¤ÀÌ ²¿¿©µµ À§Ä¡°¡ ¾ÈÁ¤ÀûÀÌµµ·Ï °­Á¦ ¼¼ÆÃ(ÃßÃµ)
+                // í”„ë¦¬íŒ¹ ì„¤ì •ì´ ê¼¬ì—¬ë„ ìœ„ì¹˜ê°€ ì•ˆì •ì ì´ë„ë¡ ê°•ì œ ì„¸íŒ…(ì¶”ì²œ)
                 line.anchorMin = line.anchorMax = new Vector2(0.5f, 0.5f);
-                line.pivot = new Vector2(0.5f, 0f); // ¾Æ·¡ ±âÁØÀ¸·Î À§·Î ÀÚ¶ó°Ô
+                line.pivot = new Vector2(0.5f, 0f); // ì•„ëž˜ ê¸°ì¤€ìœ¼ë¡œ ìœ„ë¡œ ìžë¼ê²Œ
                 line.anchoredPosition = new Vector2(x, yLine);
 
                 float height = isMajor ? majorTickHeight : minorTickHeight;
                 line.sizeDelta = new Vector2(tickWidth, height);
 
-                // Image »öÀÌ Åõ¸íÇØ¼­ ¾È º¸ÀÌ´Â °æ¿ì ¹æÁö (¿øÇÏ¸é Áö¿öµµ µÊ)
+                // Image ìƒ‰ì´ íˆ¬ëª…í•´ì„œ ì•ˆ ë³´ì´ëŠ” ê²½ìš° ë°©ì§€ (ì›í•˜ë©´ ì§€ì›Œë„ ë¨)
                 var img = line.GetComponent<Image>();
                 if (img != null && img.color.a <= 0.01f)
                     img.color = new Color(img.color.r, img.color.g, img.color.b, 1f);
 
-                // --- Label »ý¼º (Å« ´«±ÝÀÏ ¶§¸¸) ---
+                // --- Label ìƒì„± (í° ëˆˆê¸ˆì¼ ë•Œë§Œ) ---
                 if (isMajor)
                 {
                     var label = Instantiate(labelPrefab, content);
@@ -104,10 +104,10 @@ public class CompassTickBuilder : MonoBehaviour
             }
         }
 
-        // 3) Content Æø ¼³Á¤(¸¶½ºÅ©/½ºÅ©·Ñ ¾ÈÁ¤¼ºÀ» À§ÇØ ³Ë³ËÈ÷)
+        // 3) Content í­ ì„¤ì •(ë§ˆìŠ¤í¬/ìŠ¤í¬ë¡¤ ì•ˆì •ì„±ì„ ìœ„í•´ ë„‰ë„‰ížˆ)
         Vector2 size = content.sizeDelta;
         size.x = cycleWidth * repeatCount;
-        //if (size.y <= 0f) size.y = 60f; // È¤½Ã 0ÀÌ¸é ±âº» ³ôÀÌ
+        //if (size.y <= 0f) size.y = 60f; // í˜¹ì‹œ 0ì´ë©´ ê¸°ë³¸ ë†’ì´
         size.y = Mathf.Max(size.y, 60f);
         content.sizeDelta = size;
 
@@ -116,7 +116,7 @@ public class CompassTickBuilder : MonoBehaviour
 
     private string DegreeToDirection(int deg)
     {
-        // ¹è±× ½ºÅ¸ÀÏ(0=N, 90=E...)
+        // ë°°ê·¸ ìŠ¤íƒ€ì¼(0=N, 90=E...)
         switch (deg)
         {
             case 0: return "N";
@@ -131,7 +131,7 @@ public class CompassTickBuilder : MonoBehaviour
         }
     }
 
-    // (¼±ÅÃ) Content ¾Æ·¡ ´«±Ýµé¸¸ »èÁ¦ÇÏ°í ½ÍÀ» ¶§
+    // (ì„ íƒ) Content ì•„ëž˜ ëˆˆê¸ˆë“¤ë§Œ ì‚­ì œí•˜ê³  ì‹¶ì„ ë•Œ
     [ContextMenu("Clear Only TickLine & TickLabel")]
     public void ClearTicksOnly()
     {
@@ -146,108 +146,6 @@ public class CompassTickBuilder : MonoBehaviour
                 DestroyImmediate(child.gameObject);
         }
 
-        Debug.Log("TickLine/TickLabel¸¸ »èÁ¦ ¿Ï·á!");
+        Debug.Log("TickLine/TickLabelë§Œ ì‚­ì œ ì™„ë£Œ!");
     }
 }
-
-
-/*using TMPro;
-using UnityEngine;
-
-public class CompassTickBuilder : MonoBehaviour
-{
-    [Header("Build Target")]
-    [SerializeField] private RectTransform content;
-
-    [Header("Prefabs")]
-    [SerializeField] private RectTransform tickLinePrefab; // ¾ãÀº Image(¼±)
-    [SerializeField] private TextMeshProUGUI labelPrefab;  // ¼ýÀÚ/¹æÇâ ÅØ½ºÆ®
-
-    [Header("Layout")]
-    [SerializeField] private float pixelsPerDegree = 8f;
-    [SerializeField] private int stepDegree = 5;           // ´«±Ý °£°Ý(5µµ)
-    [SerializeField] private int numberLabelStep = 15;     // ¼ýÀÚ Ç¥½Ã °£°Ý(15µµ)
-    [SerializeField] private float yLine = 0f;
-    [SerializeField] private float yLabel = -18f;
-
-    [Header("Repeat")]
-    [SerializeField] private int repeatCount = 3;          // 3¼¼Æ®
-    [SerializeField] private int startCycleIndex = -1;     // -1,0,1 (°¡¿îµ¥°¡ 0)
-
-    [ContextMenu("Build Compass Ticks")]
-    public void Build()
-    {
-        if (content == null || tickLinePrefab == null || labelPrefab == null)
-        {
-            Debug.LogError("References missing!");
-            return;
-        }
-
-        // ±âÁ¸ ÀÚ½Ä Á¦°Å
-        for (int i = content.childCount - 1; i >= 0; i--)
-        {
-            DestroyImmediate(content.GetChild(i).gameObject);
-        }
-
-        float cycleWidth = 360f * pixelsPerDegree;
-
-        for (int r = 0; r < repeatCount; r++)
-        {
-            int cycleIndex = startCycleIndex + r; // -1,0,1
-            float cycleOffsetX = cycleIndex * cycleWidth;
-
-            for (int deg = 0; deg <= 360; deg += stepDegree)
-            {
-                float x = cycleOffsetX + deg * pixelsPerDegree;
-
-                // 1) tick line
-                RectTransform line = Instantiate(tickLinePrefab, content);
-                line.anchoredPosition = new Vector2(x, yLine);
-
-                // ±æÀÌ: Å« ´«±Ý/ÀÛÀº ´«±Ý ±¸ºÐ
-                float height = (deg % numberLabelStep == 0) ? 18f : 10f;
-                line.sizeDelta = new Vector2(line.sizeDelta.x, height);
-
-                // 2) label
-                if (deg % numberLabelStep == 0)
-                {
-                    var label = Instantiate(labelPrefab, content);
-                    label.rectTransform.anchoredPosition = new Vector2(x, yLabel);
-
-                    string dir = DegreeToDirection(deg);
-                    if (!string.IsNullOrEmpty(dir))
-                        label.text = dir;         // N/E/S/W/NE...
-                    else
-                        label.text = deg.ToString(); // 15, 30, 45...
-                }
-            }
-        }
-
-        // Content Æø ´ëÃæ ¼³Á¤(¹Ýº¹ ¼ö¸¸Å­)
-        Vector2 size = content.sizeDelta;
-        size.x = (360f * pixelsPerDegree) * repeatCount;
-        content.sizeDelta = size;
-
-        Debug.Log("Compass ticks built!");
-    }
-
-    private string DegreeToDirection(int deg)
-    {
-        // ¹è±× ½ºÅ¸ÀÏ: 0=N, 90=E, 180=S, 270=W
-        // 45 ´ÜÀ§·Î NE, SE...
-        switch (deg)
-        {
-            case 0: return "N";
-            case 45: return "NE";
-            case 90: return "E";
-            case 135: return "SE";
-            case 180: return "S";
-            case 225: return "SW";
-            case 270: return "W";
-            case 315: return "NW";
-            case 360: return "N"; // ¸¶Áö¸·µµ NÀ¸·Î
-            default: return "";
-        }
-    }
-}
-*/

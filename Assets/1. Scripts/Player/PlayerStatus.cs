@@ -163,8 +163,8 @@ public class PlayerStatus : MonoBehaviour, IDamageable
         if (IsThirsty)
             return;
 
-        // 프리팹 값 8/초는 맞은 만큼 금방 차서 HP 가 안 닳는 것처럼 보였다(10/12 사용자). 5/초로 묶었다가
-        // 10/13 사용자 "회복 속도 좀만 천천히" → 3.5/초.
+        // 프리팹 값 8/초는 맞은 만큼 금방 차서 HP 가 안 닳는 것처럼 보였다. 5/초로 묶었다가
+        // 회복이 여전히 빨라 3.5/초로 낮췄다.
         currentHP = Mathf.Min(maxHP, currentHP + (Mathf.Min(regenPerSecond, 3.5f) + AetherLevel.RegenBonusPerSecond) * Time.deltaTime);
         UpdateUI();
     }

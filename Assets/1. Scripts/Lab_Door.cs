@@ -128,7 +128,7 @@ public class Lab_Door : MonoBehaviour
         ActivateCurrentPointer();
     }
 
-    /// <summary>Shiri 는 총이 없어 표적을 못 쏜다. 주먹으로 문을 부수면 표적을 다 맞힌 것과 똑같이 열린다(10/12 사용자).</summary>
+    /// <summary>Shiri 는 총이 없어 표적을 못 쏜다. 주먹으로 문을 부수면 표적을 다 맞힌 것과 똑같이 열린다.</summary>
     public void PunchOpen()
     {
         if (isNeutralized) return;

@@ -216,7 +216,7 @@ public class HangyeolPartAbilityController : MonoBehaviour
         if (moveHankyul == null)
             return;
 
-        // 최대 힘 42 는 풀충전 58m 로 맵 밖까지 넘어갔다. 사용자 요청(10/12)으로 약 20m 가 되게 한 곳에서 묶는다.
+        // 최대 힘 42 는 풀충전 58m 로 맵 밖까지 넘어갔다. 약 20m 가 되게 한 곳에서 묶는다.
         // 장면마다 저장된 값(07 은 42)이 달라도 이 값을 넘지 않는다.
         moveHankyul.ConfigureSuperJump(Mathf.Min(minJumpForce, SuperJumpMaxForceCap), Mathf.Min(maxJumpForce, SuperJumpMaxForceCap), maxChargeTime);
     }

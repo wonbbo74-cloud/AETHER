@@ -225,7 +225,7 @@ public class AetherEncounterDirector : MonoBehaviour
         foreach (Drones d in FindObjectsByType<Drones>(FindObjectsSortMode.None))
             Consider(d, 18f);
         // 터렛은 웨이브에 넣지 않는다. 마지막 웨이브에 들어가 있어 그 웨이브가 풀릴 때까지 잠들어 있었고,
-        // 움직이지 못하니 그 앞을 지나가도 한 발도 쏘지 않았다(사용자 지적). 첫 웨이브와 함께 모두 깨운다.
+        // 움직이지 못하니 그 앞을 지나가도 한 발도 쏘지 않았다. 첫 웨이브와 함께 모두 깨운다.
         foreach (EnemyTurretController t in FindObjectsByType<EnemyTurretController>(FindObjectsSortMode.None))
             if (t != null && t.gameObject.activeInHierarchy)
                 turrets.Add(t.gameObject);

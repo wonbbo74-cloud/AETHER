@@ -1,19 +1,19 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 
 public class AudioManager : MonoBehaviour
 {
-    [Header("¿Àµğ¿À ¼Ò½º")]
-    public AudioSource bgmSource;    // ¹è°æÀ½
-    public AudioSource sfxSource;    // È¿°úÀ½
+    [Header("ì˜¤ë””ì˜¤ ì†ŒìŠ¤")]
+    public AudioSource bgmSource;    // ë°°ê²½ìŒ
+    public AudioSource sfxSource;    // íš¨ê³¼ìŒ
 
-    [Header("»ç¿îµå ¸ñ·Ï (Å° = clip)")]
+    [Header("ì‚¬ìš´ë“œ ëª©ë¡ (í‚¤ = clip)")]
     public List<SoundData> soundList = new List<SoundData>();
     private Dictionary<string, AudioClip> clipDict = new Dictionary<string, AudioClip>();
 
-    [Header("¸ŞÀÎ ¸Ş´º ¾À ÀÌ¸§")]
-    public string mainMenuSceneName = "MainMenu"; // ÇÁ·ÎÁ§Æ®¿¡ ¸Â°Ô º¯°æ
+    [Header("ë©”ì¸ ë©”ë‰´ ì”¬ ì´ë¦„")]
+    public string mainMenuSceneName = "MainMenu"; // í”„ë¡œì íŠ¸ì— ë§ê²Œ ë³€ê²½
 
     private void Awake()
     {
@@ -52,10 +52,10 @@ public class AudioManager : MonoBehaviour
         SceneManager.activeSceneChanged -= OnSceneChanged;
     }
 
-    // ¾ÀÀÌ ¹Ù²ğ ¶§ È£ÃâµÊ
+    // ì”¬ì´ ë°”ë€” ë•Œ í˜¸ì¶œë¨
     private void OnSceneChanged(Scene oldScene, Scene newScene)
     {
-        // »õ·Î È°¼ºÈ­µÈ ¾ÀÀÌ ¸ŞÀÎ ¸Ş´º°¡ ¾Æ´Ï¶ó¸é BGM Á¤Áö
+        // ìƒˆë¡œ í™œì„±í™”ëœ ì”¬ì´ ë©”ì¸ ë©”ë‰´ê°€ ì•„ë‹ˆë¼ë©´ BGM ì •ì§€
         if (newScene.name != mainMenuSceneName)
         {
             if (bgmSource != null && bgmSource.isPlaying)
@@ -64,7 +64,7 @@ public class AudioManager : MonoBehaviour
     }
 
     // ----------------------------------------------------
-    // BGM Àç»ı
+    // BGM ì¬ìƒ
     // ----------------------------------------------------
     public void PlayBGM(string key, float volume = 1f)
     {
@@ -80,7 +80,7 @@ public class AudioManager : MonoBehaviour
     }
 
     // ----------------------------------------------------
-    // SFX Àç»ı (Å° ±â¹İ)
+    // SFX ì¬ìƒ (í‚¤ ê¸°ë°˜)
     // ----------------------------------------------------
     public void PlaySFX(string key, float volume = 1f)
     {
@@ -98,7 +98,7 @@ public class AudioManager : MonoBehaviour
     }
 
     // ----------------------------------------------------
-    // SFX Àç»ı (Á÷Á¢ Å¬¸³ Àü´Ş)
+    // SFX ì¬ìƒ (ì§ì ‘ í´ë¦½ ì „ë‹¬)
     // ----------------------------------------------------
     public void PlaySFX(AudioClip clip, float volume = 1f)
     {

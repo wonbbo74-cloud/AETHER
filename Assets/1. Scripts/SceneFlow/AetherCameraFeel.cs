@@ -35,7 +35,7 @@ public class AetherCameraFeel : MonoBehaviour
     public const float MouseScale = 1f / 60f;
 
     public const float LookUpLimit = -80f;
-    // 10/12 사용자: 아래를 끝까지 보면 자기 몸 안쪽이 보인다 → 아래로 보는 각도를 제한.
+    // 아래를 끝까지 보면 자기 몸 안쪽이 보인다 → 아래로 보는 각도를 제한.
     public const float LookDownLimit = 35f;
     public const float HorizontalFov = 103f;
 

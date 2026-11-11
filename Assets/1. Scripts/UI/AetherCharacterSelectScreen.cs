@@ -240,7 +240,7 @@ public class AetherCharacterSelectScreen : MonoBehaviour
         if (artImage == null)
             artImage = EnsureImage(canvas, "CharSelect Art");
 
-        // 가로 중앙 1920, 발끝 y=1860. 높이 1380 이면 머리가 위의 "CHARACTER SELECT" 제목(아래끝 y≈560)에 걸쳐 1260 으로 줄였다(10/12 최종 점검).
+        // 가로 중앙 1920, 발끝 y=1860. 높이 1380 이면 머리가 위의 "CHARACTER SELECT" 제목(아래끝 y≈560)에 걸쳐 1260 으로 줄였다.
         PlaceByDesignRect(artImage.rectTransform, 1920f - 260f, 1860f - 1260f, 520f, 1260f);
 
         artImage.sprite = null;

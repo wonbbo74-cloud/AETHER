@@ -5,7 +5,7 @@ using UnityEngine;
 ///
 /// Both characters move by MovePosition on a physics body, jumping to the next position every physics step.
 /// At a 9 m/s boost that is 18 cm per step. When it lands inside a door or gate under 16–24 cm thick,
-/// physics pushes the body out the far side, and the player went straight through. Found in 10/8 checks: 04 bunker gate, doors in the 05 streets.
+/// physics pushes the body out the far side, and the player went straight through. Seen at the 04 bunker gate and doors in the 05 streets.
 ///
 /// Sweep the capsule along the path first and stop just short of a vertical surface, then slide along it.
 /// The bottom of the capsule is raised by the step height, so floor seams, steps and ramps (sloped surfaces) don't block.

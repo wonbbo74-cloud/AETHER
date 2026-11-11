@@ -1,13 +1,13 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 public interface IInteractable
 {
-    // UI¿¡ Ç¥½ÃÇÒ ÀÌ¸§ (¿¹: "¹°", "½Ä·®")
+    // UIì— í‘œì‹œí•  ì´ë¦„ (ì˜ˆ: "ë¬¼", "ì‹ëŸ‰")
     string GetDisplayName();
 
-    // UI¿¡ Ç¥½ÃÇÒ ¾ÆÀÌÄÜ
+    // UIì— í‘œì‹œí•  ì•„ì´ì½˜
     Sprite GetIcon();
 
-    // ½ÇÁ¦ »óÈ£ÀÛ¿ë ·ÎÁ÷
+    // ì‹¤ì œ ìƒí˜¸ì‘ìš© ë¡œì§
     void Interact(PlayerInteractor interactor);
 }

@@ -1,11 +1,11 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 public class YunseoEquipmentRuntimeBridge : MonoBehaviour
 {
-    [Header("¿¬°á")]
+    [Header("ì—°ê²°")]
     [SerializeField] private Move_Yunseo moveYunseo;
 
-    [Header("ÇöÀç ÀåÂø »óÅÂ(µğ¹ö±×¿ë)")]
+    [Header("í˜„ì¬ ì¥ì°© ìƒíƒœ(ë””ë²„ê·¸ìš©)")]
     [SerializeField] private EquipmentItemData currentLegItem;
 
     private void Awake()

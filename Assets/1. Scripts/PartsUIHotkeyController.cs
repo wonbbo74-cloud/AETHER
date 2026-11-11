@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PartsUIHotkeyController : MonoBehaviour
@@ -6,7 +6,7 @@ public class PartsUIHotkeyController : MonoBehaviour
     [Header("UI")]
     [SerializeField] private GameObject partsUIRoot;
 
-    [Header("ÇÃ·¹ÀÌ¾î")]
+    [Header("í”Œë ˆì´ì–´")]
     [SerializeField] private Move_Yunseo moveYunseo;
 
     private bool isOpen = false;
